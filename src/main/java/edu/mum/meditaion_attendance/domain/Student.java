@@ -1,5 +1,6 @@
 package edu.mum.meditaion_attendance.domain;
 
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,5 +20,4 @@ public class Student extends Person {
     private String studentId;
     private String barCode;
     private LocalDate entry;
-
 }
