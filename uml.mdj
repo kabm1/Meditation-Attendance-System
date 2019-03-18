@@ -2159,7 +2159,7 @@
 											"top": 725,
 											"width": 167,
 											"height": 13,
-											"text": "+course: Course",
+											"text": "+code: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2744,10 +2744,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFpkj7qknq1vlk="
 							},
-							"name": "course",
-							"type": {
-								"$ref": "AAAAAAFpkj7qknq1vlk="
-							}
+							"name": "code",
+							"type": "String"
 						},
 						{
 							"_type": "UMLAttribute",

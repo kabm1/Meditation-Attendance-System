@@ -4,10 +4,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 @Entity
-@NoArgsConstructor
 @Data
-public class Faculty extends Person {
-
+@NoArgsConstructor
+public class User implements Serializable {
 }
