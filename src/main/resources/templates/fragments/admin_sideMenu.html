@@ -12,25 +12,29 @@
                 <div class="nav-link">
                     <div class="user-wrapper">
                         <div class="profile-image">
-                            <img src="images/faces/face1.jpg" alt="profile image">
+                            <img th:src="@{/images/admin.jpg}" src="../../static/images/admin.jpg"
+                                 alt="profile image">
                         </div>
                         <div class="text-wrapper">
-                            <p class="profile-name">Richard V.Welsh</p>
+                            <p class="profile-name">Frank Carpenter</p>
                             <div>
-                                <small class="designation text-muted">Manager</small>
+                                <small class="designation text-muted">Administrator</small>
                                 <span class="status-indicator online"></span>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-success btn-block">New Project
-                        <i class="mdi mdi-plus"></i>
-                    </button>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="menu-icon mdi mdi-television"></i>
                     <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{student/list}" href="index.html">
+                    <i class="menu-icon mdi mdi-television"></i>
+                    <span class="menu-title">Student</span>
                 </a>
             </li>
             <li class="nav-item">
