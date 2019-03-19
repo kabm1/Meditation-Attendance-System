@@ -8,10 +8,11 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
+
 @Table(name = "event_attendance_record")
 @Data
 @NoArgsConstructor
+@Entity
 public class EventAttendanceRecord implements Serializable {
 
     @Id
