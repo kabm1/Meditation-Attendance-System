@@ -1,9 +1,6 @@
 package edu.mum.meditaion_attendance.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -13,12 +10,17 @@ public class Duration {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "name")
+    private String name;
 
-
+    @Column(name = "start_date")
     private LocalDate StartDate;
+
+    @Column(name = "end_date")
     private LocalDate EndDate;
-    String name;
-    Integer numberOfDays;
+
+    @Column(name = "number_of_days")
+    private Integer numberOfDays;
 
     public Long getId() {
         return id;
