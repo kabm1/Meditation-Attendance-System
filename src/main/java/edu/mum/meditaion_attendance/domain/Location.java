@@ -2,10 +2,7 @@ package edu.mum.meditaion_attendance.domain;
 
 import org.hibernate.annotations.GeneratorType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -16,6 +13,9 @@ public class Location  implements Serializable {
     @GeneratedValue
     private Long id;
     private String name;
+    @Column(name = "short_name")
+    private String shortName;
+
     private String description;
     private Long capacity;
 
@@ -52,5 +52,13 @@ public class Location  implements Serializable {
 
     public void setCapacity(Long capacity) {
         this.capacity = capacity;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
     }
 }

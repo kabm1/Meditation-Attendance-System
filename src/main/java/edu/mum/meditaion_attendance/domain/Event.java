@@ -15,6 +15,10 @@ public class Event implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String name;
+
+    private String description;
+
     @OneToOne
     @JoinColumn(name = "duration")
     private Duration duration;
