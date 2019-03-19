@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-                xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-                layout:decorator="layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
 <head th:include="layout::headerFrag(pageTitle='studentList')"></head>
- <body th:include="layout::bodyFrag(pageBody='studentList')">
+<body th:include="layout::bodyFrag(pageBody='studentList')">
 <div th:fragment="content">
     welcome to studnet list
 </div>
