@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+                layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='Add Student')"></head>
+<body th:include="layout::bodyFrag(pageBody='Add Student')">
+  <div th:fragment="content">
+      Please Add a Student........
+  </div>
+
+</body>
+</html>

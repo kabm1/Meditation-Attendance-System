@@ -1,6 +1,7 @@
 package edu.mum.meditaion_attendance.repository;
 
 import edu.mum.meditaion_attendance.domain.Student;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +19,7 @@ public interface StudentRepository extends CrudRepository<Student,Long> {
     Student findAllByEntry(LocalDate entry);
     void deleteByStudentId(String studentId);
     Student findByFirstName(String firstName);
+
 
 
 }
