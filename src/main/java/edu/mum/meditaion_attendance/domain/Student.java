@@ -3,11 +3,9 @@ package edu.mum.meditaion_attendance.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -20,4 +18,6 @@ public class Student extends Person {
     private String studentId;
     private String barCode;
     private LocalDate entry;
+    @Transient
+    private MultipartFile profilePicture;
 }
