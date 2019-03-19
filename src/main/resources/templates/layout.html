@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="headerFrag (pageTitle)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${pageTitle}"></title>
+    <link rel="stylesheet" th:href="@{/css/vendors/vendor.bundle.addons.css}"  href="../../css//vendors/vendor.bundle.addons.css">
+    <link rel="stylesheet" th:href="@{/css/vendors/vendor.bundle.base.css}"  href="../../css/vendors/vendor.bundle.base.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}"  href="../../css/style.css">
+</head>
+<body th:fragment="bodyFrag (pageBody)">
+
+    <!--header-->
+    <div th:include="fragments/header :: header" ></div>
+    <!--end header-->
+
+
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper">
+            <!--side Menu-->
+            <div th:include="fragments/admin_sideMenu::admin_sideMenu"> </div>
+            <!--end side Menu-->
+
+            <!--main body -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div th:replace="this :: content"> </div>
+                </div>
+                <!--<div layout:fragmnt="add"></div>-->
+                <div th:include="fragments/footer::footer"></div>
+
+            </div>
+            <!--end main body-->
+        </div>
+
+    </div>
+
+    <script th:src="@{/js/misc.js}" src="../js/misc.js"> </script>
+    <script th:src="@{/js/off-canvas}" src="../js/off-canvas.js"> </script>
+    <script th:src="@{/js/vendor.bundle.addons.js}" src="../js/vendor.bundle.addons.js"> </script>
+    <script th:src="@{/js/vendor.bundle.base.js}" src="../js/vendor.bundle.base.js"> </script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var contextRoot=/*[[@{/}]]*/ '';
+        /*]]>*/
+    </script>
+    <div layout:fragment="footer-script">
+
+    </div>
+</body>
+</html>
