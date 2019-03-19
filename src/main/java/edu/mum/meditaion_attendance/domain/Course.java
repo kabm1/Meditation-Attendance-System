@@ -13,11 +13,12 @@ public class Course {
 
     @Id
     @GeneratedValue
-    public Long id;
-    public String courseId;
-    public  Faculty faculty;
-    public Duration duration;
-    public Student student;
+    private  Long id;
+    private String CourseName;
+    private String courseId;
+    private Faculty faculty;
+    private Duration duration;
+    private Student student;
 
     public Course(){
 
@@ -53,5 +54,13 @@ public class Course {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public String getCourseName() {
+        return CourseName;
+    }
+
+    public void setCourseName(String courseName) {
+        CourseName = courseName;
     }
 }
