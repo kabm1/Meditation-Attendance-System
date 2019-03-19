@@ -15,10 +15,10 @@ public class Duration  implements Serializable {
     private String name;
 
     @Column(name = "start_date")
-    private LocalDate StartDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private LocalDate EndDate;
+    private LocalDate endDate;
 
     @Column(name = "number_of_days")
     private Integer numberOfDays;
@@ -32,19 +32,19 @@ public class Duration  implements Serializable {
     }
 
     public LocalDate getStartDate() {
-        return StartDate;
+        return startDate;
     }
 
     public void setStartDate(LocalDate startDate) {
-        StartDate = startDate;
+        this.startDate = startDate;
     }
 
     public LocalDate getEndDate() {
-        return EndDate;
+        return endDate;
     }
 
     public void setEndDate(LocalDate endDate) {
-        EndDate = endDate;
+        this.endDate = endDate;
     }
 
     public String getName() {

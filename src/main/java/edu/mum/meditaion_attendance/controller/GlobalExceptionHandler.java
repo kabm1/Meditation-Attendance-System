@@ -5,7 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 
@@ -16,9 +18,12 @@ public class GlobalExceptionHandler {
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND , reason = "IOException occured")
     @ExceptionHandler(IOException.class)
-    public String handleIoException(){
+    @ModelAttribute
+    public ModelAndView handleIoException(){
 
+        ModelAndView modelAndView= new ModelAndView();
         logger.error("Page not found ");
-        return "errorPages/error-404";
+        modelAndView.setViewName("errorPages/error-404");
+        return modelAndView;
     }
 }
