@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 public class EventType {
@@ -14,9 +15,11 @@ public class EventType {
     private Long id;
 
     private String name;
+    private String shortName;
     private String description;
-    private LocalDate startTime;
-    private LocalDate endTime;
+    private LocalTime startTime;
+    private LocalTime endTime;
+
 
     public Long getId() {
         return id;
@@ -41,21 +44,27 @@ public class EventType {
         this.name = name;
     }
 
-    public LocalDate getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDate startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDate getEndTime() {
+    public LocalTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDate endTime) {
+    public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
     }
 
+    public String getShortName() {
+        return shortName;
+    }
 
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
 }

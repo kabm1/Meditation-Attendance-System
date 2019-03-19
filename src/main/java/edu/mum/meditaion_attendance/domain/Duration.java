@@ -1,10 +1,11 @@
 package edu.mum.meditaion_attendance.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
-public class Duration {
+public class Duration  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
