@@ -28,10 +28,8 @@ public class StudentController {
 
     @GetMapping("/list")
     public String listStudents(Model model){
-        List<Student> students=studentService.getAllStudents()
-                .stream()
-                .limit(10)
-                .collect(Collectors.toList());
+        List<Student> students=studentService.getFirstTen();
+
         model.addAttribute("students",students);
         return "StudentList";
     }

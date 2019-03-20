@@ -17,6 +17,7 @@ public interface StudentService {
     Student findStudentByEntry(LocalDate entry);
     List<Student> findStudentsByEntry(LocalDate entry);
     Student save(Student student);
+    List<Student> getFirstTen();
    void delete(Student student);
    void deleteById(Long id);
    void deleteByStudentId(String studentId);

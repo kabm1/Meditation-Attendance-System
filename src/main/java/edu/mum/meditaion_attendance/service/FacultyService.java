@@ -10,5 +10,5 @@ public interface FacultyService {
     Faculty findById(Long id);
     void delete(Faculty faculty);
     void deleteById(Long id);
-//    List<Faculty> findAll();
+   List<Faculty> findFirstTen();
 }

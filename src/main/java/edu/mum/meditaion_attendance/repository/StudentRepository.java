@@ -19,6 +19,8 @@ public interface StudentRepository extends CrudRepository<Student,Long> {
     Student findAllByEntry(LocalDate entry);
     void deleteByStudentId(String studentId);
     Student findByFirstName(String firstName);
+    @Query(value = "select * from student limit 10",nativeQuery = true)
+    List<Student> getFirstTen();
 
 
 

@@ -38,6 +38,11 @@ public class FacultyServiceImpl implements FacultyService {
     public void deleteById(Long id) {
         facultyRepository.deleteById(id);
     }
+
+    @Override
+    public List<Faculty> findFirstTen() {
+        return facultyRepository.getFirstTen();
+    }
 /*
     @Override
     public List<Faculty> findAll() {

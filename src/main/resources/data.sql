@@ -78,5 +78,10 @@ INSERT INTO STUDENT(id,student_id,bar_code,entry,first_name,last_name,email,phon
 INSERT INTO STUDENT(id,student_id,bar_code,entry,first_name,last_name,email,phone_id) VALUES (132,'000-98-1262','8001',TO_DATE('03/01/2019','MM/DD/YYYY'),'Estes','Jonah ','mbernahu@mum.edu',null);
 
 
-
+INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(101,'Assaad','Saad','asaad@mum.edu');
+INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(102,'Rixuan','Xing','rxing@mum.edu');
+INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(103,'Clyde','Ruby','cruby@mum.edu');
+INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(104,'Bruce','Lester','blester@mum.edu');
+INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(105,'Renuka','Mohanraj','rmohanraj@mum.edu');
+INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(106,'Andualem','Hailu','aabebe@mum.edu');
 

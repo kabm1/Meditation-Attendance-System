@@ -2,7 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       lang="en"
       layout:decorator="layout">
-<head th:include="layout::headerFrag(pageTitle='studentList')"></head>
+<head th:include="layout::headerFrag(pageTitle='studentList')">
+    <link rel="stylesheet" th:href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
 <body th:include="layout::bodyFrag(pageBody='studentList')">
 <div th:fragment="content">
     <div class="col-lg-12 grid-margin stretch-card">
@@ -35,13 +39,15 @@
                         </tr>
                         <tr th:each="student:${students}">
                             <td class="py-1">
-                               <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
+                                <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
                             </td>
                             <td th:text="${student.firstName}">Herman</td>
                             <td th:text="${student.lastName}">Beck</td>
                             <td th:text="${student.studentId}">Student Id</td>
                             <td th:text="${student.email}">Student Email</td>
-                            <td th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}">May 15, 2015</td>
+                            <td th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}">May 15,
+                                2015
+                            </td>
                             <td>
                                 <a th:href="@{'/student/edit'+'?'+'id='+${student.id}}">
                                     <button class="btn btn-blue btn-rounded btn-fw">Edit</button>

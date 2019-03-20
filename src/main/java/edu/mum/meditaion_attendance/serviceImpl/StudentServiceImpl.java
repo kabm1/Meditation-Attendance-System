@@ -66,6 +66,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> getFirstTen() {
+        return studentRepository.getFirstTen();
+    }
+
+    @Override
     public void delete(Student student) {
         studentRepository.delete(student);
     }
