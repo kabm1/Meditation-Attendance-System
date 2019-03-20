@@ -46,7 +46,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     protected void configure(HttpSecurity http) throws Exception {
   http.
       authorizeRequests()
-              .antMatchers("/").permitAll()
+              .antMatchers("/**").permitAll()
               .antMatchers("/login").permitAll()
               .antMatchers("/registration").permitAll()
               .antMatchers("/h2-console/**").permitAll()

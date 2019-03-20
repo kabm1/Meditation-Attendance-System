@@ -17,6 +17,9 @@
                 </p>
 
                 <div class="table-responsive">
+                    <
+                </div>
+                <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -24,25 +27,34 @@
                             <th>Short name</th>
                             <th>Description</th>
                             <th>Capacity</th>
-                            <th></th>
-                            <th></th>
+
                         </tr>
                         </thead>
                         <tbody>
-                        <tr >
-                            <td th:text="${location.name}"> </td>
-                            <td th:text="${location.shortName}"></td>
-                            <td th:text="${location.description}"></td>
-                            <td th:text="${location.capacity}"></td>
+                        <tr th:if="${location.empty}">
+                            <td colspan="4">No Data</td>
+                        </tr>
+                        <tr th:each="location:${location}">
+
+                            <td th:text="${location.name}">Herman</td>
+                            <td th:text="${location.shortName}">Beck</td>
+                            <td th:text="${location.description}">Student Id</td>
+                            <td th:text="${location.capacity}">Student Email</td>
 
                             <td>
                                 <a th:href="@{'/location/edit'+'?'+'id='+${location.id}}"><button class="btn btn-dark btn-rounded btn-fw">Edit</button>
                                 </a>
                             </td>
                             <td>
-                                <a th:href="@{/location/remove}"><button class="btn btn-dark btn-rounded btn-fw">Remove</button>
+                                <a th:href="@{'/location/delete'+'?'+'id='+${location.id}}"><button class="btn btn-dark btn-rounded btn-fw">Remove</button>
                                 </a>
                             </td>
+                            <td>
+                            <a th:href="@{'/location/details'+'?'+'id='+${location.id}}">
+                                <button class="btn btn-blue btn-rounded btn-fw">Details</button>
+                            </a>
+                            </td>
+                        </tr>
                         </tr>
                         </tbody>
                     </table>

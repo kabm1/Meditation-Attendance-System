@@ -31,7 +31,7 @@ public class LocationController {
           return "LocationForm";
       }
     @PostMapping("/location/add")
-    public String saveLocation(@Valid @ModelAttribute("location") Location location, Model model, BindingResult bindingResult,
+    public String saveLocation(@Valid @ModelAttribute("location") Location location,BindingResult bindingResult,
                                RedirectAttributes redirectAttedributes) {
         if (bindingResult.hasErrors()) {
             return "LocationForm";
@@ -39,13 +39,32 @@ public class LocationController {
 
         Location loc = locationServiceImpl.save(location);
         redirectAttedributes.addFlashAttribute("location", loc);
+        System.out.println(loc.toString());
         return "redirect:/location/details";
 
     }
 
     @GetMapping("location/details")
-    public String getDetailedLocation( Model model) {
+    public String getDetailedLocation(/*@RequestParam("id") Long id */ Model model) {
+
+           List <Location> location = locationServiceImpl.findAll();
+           model.addAttribute("location", location);
+
         return "LocationDetails";
+    }
+
+    @GetMapping("location/delete")
+    public String removeStudent(@RequestParam("id") Long id,Model model,RedirectAttributes redirect){
+        try {
+            Location location= locationServiceImpl.findById(id);
+            locationServiceImpl.delete(location);
+            redirect.addFlashAttribute("successMessage","location.success.error");
+        }catch (Exception e){
+            e.printStackTrace();
+            redirect.addFlashAttribute("errorMessage","location.delete.error");
+        }
+
+        return "redirect:/location/details";
     }
 
 
