@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+<head>
+
+</head>
+<body>
+<form class="forms-sample" th:action="@{/login}" method="post" th:object="${user}">
+        <ul th:if="${#fields.hasErrors('*')}">
+                <li th:each="err: ${#fields.errors('*')}" th:text="${err}">Input is Incorrect</li>
+        </ul>
+
+        <div class="form-group">
+                <label
+                        for="userName"><span th:text="#{user.form.userName}">User Name</span></label>
+                <input type="text" th:field="*{userName}" class="form-control" id="userName" placeholder="User Name">
+                <p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+                   th:errorclass="fieldError">Invalid User Name</p>
+        </div>
+        <div class="form-group">
+                <label
+                        for="password"><span th:text="#{user.form.password}">Password</span></label>
+                <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Pass word">
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                   th:errorclass="fieldError">Invalid Password</p>
+        </div>
+
+        <button type="submit" class="btn btn-success mr-2" th:value="#{user.form.login}">Login</button>
+
+</form>
+
+
+</body>

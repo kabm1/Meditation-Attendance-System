@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class LocationServiceImpl implements LocationService {
 
@@ -40,6 +39,10 @@ public class LocationServiceImpl implements LocationService {
     @Override
     public void deleteLocation(Long locationId) {
         locationRepository.delete(findById(locationId));
+    }
+
+    public Location findByShortName(String shortName) {
+        return locationRepository.findByShortName(shortName);
     }
 
 }

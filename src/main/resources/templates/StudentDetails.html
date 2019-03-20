@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='Student Details')"></head>
+<body th:include="layout::bodyFrag(pageBody='Student Details')">
+<div th:fragment="content">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <a th:href="@{/student/add}" href="#">
+                <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Student</button>
+            </a>
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-description">
+                    <code></code>
+                </p>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>First name</th>
+                            <th>Last Name</th>
+                            <th>Student ID</th>
+                            <th>Email</th>
+                            <th>Entry</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td class="py-1">
+                                <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
+                            </td>
+                            <td th:text="${student.firstName}"></td>
+                            <td th:text="${student.lastName}"></td>
+                            <td th:text="${student.studentId}"></td>
+                            <td th:text="${student.email}"></td>
+                            <td th:text="${student.entry}"></td>
+                            <td>
+                                <a th:href="@{'/student/edit'+'?'+'id='+${student.id}}">
+                                    <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
+                                </a>
+                                <a th:href="@{'/student/delete'+'?'+'id='+${student.id}}">
+                                    <button class="btn btn-blue btn-rounded btn-fw">Remove</button>
+                                </a>
+                                <a th:href="@{'/student/details'+'?'+'id='+${student.id}}">
+                                    <button class="btn btn-blue btn-rounded btn-fw">Details</button>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

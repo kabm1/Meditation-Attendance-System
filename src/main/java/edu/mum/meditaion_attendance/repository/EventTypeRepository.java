@@ -9,4 +9,6 @@ public interface EventTypeRepository extends CrudRepository<EventType, Long> {
 
     EventType findByName(String name);
 
+    EventType findByShortName(String shortName);
+
 }

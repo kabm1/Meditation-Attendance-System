@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+
+<head th:include="layout::headerFrag(pageTitle='Add Student')"></head>
+<body th:include="layout::bodyFrag(pageBody='Add Student')">
+<div th:fragment="content">
+    <div class=" grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Student Form</h4>
+                <p class="card-description">
+                    Please fill the data........
+                </p>
+                <form class="forms-sample" th:action="@{/student/add}" method="post" th:object="${student}"
+                      enctype="multipart/form-data">
+                    <ul th:if="${#fields.hasErrors('*')}">
+                        <li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+                    </ul>
+                    <div class="form-group" style="display: none">
+                        <input type="text" th:field="*{id}" class="form-control" id="id"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label
+                                for="firstName"><span th:text="#{Student.form.firstName}"></span></label>
+                        <input type="text" th:field="*{firstName}" class="form-control" id="firstName"
+                               placeholder="First Name">
+                        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+                           th:errorclass="fieldError"></p>
+                    </div>
+                    <div class="form-group">
+                        <label
+                                for="lastName"><span th:text="#{Student.form.lastName}"></span></label>
+                        <input type="text" th:field="*{lastName}" class="form-control" id="lastName"
+                               placeholder="Last Name">
+                        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                           th:errorclass="fieldError"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><span th:text="#{Student.form.email}"></span> </label>
+                        <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Email">
+                        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                           th:errorclass="fieldError">Invalid
+                            ID</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentId"><span th:text="#{Student.form.studentId}"></span></label>
+                        <input type="text" th:field="*{studentId}" class="form-control" id="studentId"
+                               placeholder="Student ID">
+                        <p th:if="${#fields.hasErrors('studentId')}" th:errors="*{studentId}"
+                           th:errorclass="fieldError"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="barCode"><span th:text="#{Student.form.barcode}"></span></label>
+                        <input type="text" th:field="*{barCode}" class="form-control" id="barCode"
+                               placeholder="barcode">
+                        <p th:if="${#fields.hasErrors('barCode')}" th:errors="*{barCode}"
+                           th:errorclass="fieldError"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="barCode"><span th:text="#{Student.form.entry}"></span></label>
+                        <input type="text" th:field="*{entry}" class="form-control" id="entry"
+                               placeholder="Entry">
+                        <p th:if="${#fields.hasErrors('entry')}" th:errors="*{entry}"
+                           th:errorclass="fieldError"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="barCode"><span th:text="#{Student.form.phone}"></span></label>
+                        <input type="text" th:field="*{phone}" class="form-control" id="phone"
+                               placeholder="***-***-****">
+                        <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+                           th:errorclass="fieldError"></p>
+                    </div>
+                    <div class="form-group">
+                        <label><span th:text="#{Student.form.profilePicture}"></span></label>
+                        <div class="input-group col-xs-12">
+                            <input type="file" th:field="*{profilePicture}"
+                                   class="form-control file-upload-info file-upload-browse btn btn-info"
+                                   placeholder="Upload Image"/>
+                            <p th:if="${#fields.hasErrors('profilePicture')}" th:errors="*{profilePicture}"
+                               th:errorclass="fieldError"></p>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success mr-2" th:text="#{Student.form.button.edit}"></button>
+                    <button type="reset" class="btn btn-success mr-2" th:text="#{Student.form.button.reset}"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
