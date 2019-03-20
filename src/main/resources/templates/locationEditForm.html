@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='Add Location')"></head>
+<body th:include="layout::bodyFrag(pageBody='Add Location')">
+<div th:fragment="content">
+    <div class=" grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Basic form</h4>
+                <form class="forms-sample" th:action="@{/location/add}" method="post" th:object="${location}">
+
+                    <ul th:if="${#fields.hasErrors('*')}">
+                        <li th:each="err: ${#fields.errors('*')}" th:text="${err}">Input is Incorrect</li>
+                    </ul>
+                    <div class="form-group" >
+                    <input type="hidden" th:field="*{id}" class="form-control" id="id" >
+                </div>
+
+                    <div class="form-group">
+                        <label
+                                for="name"><span th:text="#{location.form.name}"> Name</span></label>
+                        <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
+                        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                           th:errorclass="fieldError">Invalid
+                            ID</p>
+                    </div>
+                    <div class="form-group">
+                        <label
+                                for="shortName"><span th:text="#{location.form.shortName}">Last Name</span></label>
+                        <input type="text" th:field="*{shortName}" class="form-control" id="shortName"
+                               placeholder="short Name">
+                        <p th:if="${#fields.hasErrors('shortName')}" th:errors="*{shortName}"
+                           th:errorclass="fieldError">Invalid
+                            ID</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="description"><span th:text="#{location.form.description}">Description</span>
+                        </label>
+                        <input type="text" th:field="*{description}" class="form-control" id="description"
+                               placeholder="description">
+                        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+                           th:errorclass="fieldError">Invalid
+                            ID</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="capacity"><span th:text="#{location.form.capacity}">Capacity</span></label>
+                        <input type="text" th:field="*{capacity}" class="form-control" id="capacity"
+                               placeholder="capacity">
+                        <p th:if="${#fields.hasErrors('capacity')}" th:errors="*{capacity}"
+                           th:errorclass="fieldError">Invalid
+                            Building Capacity</p>
+
+                        <button type="submit" class="btn btn-success mr-2" th:value="#{location.form.button.add}">
+                            Submit
+                        </button>
+                        <button type="reset" class="btn btn-success mr-2" th:value="#{location.form.button.reset}">
+                            Rest
+                        </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
