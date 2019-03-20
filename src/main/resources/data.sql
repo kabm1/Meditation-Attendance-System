@@ -88,13 +88,52 @@ INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(105,'Renuka','Mohanraj
 INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(106,'Andualem','Hailu','aabebe@mum.edu');
 
 
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (101,'Web Application Architecture','CS-543','WAA','Spring framework');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (102,'Modern Web Application','CS-525','MWA','Angular Framework');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (103,'Web Application Programing','CS-578','WAP','HTML CSS JQUERY');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (104,'Modern Programming Practice','CS-443','MPP','Java 8 ');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (101,'Web Application Architecture','CS-543','WAA','Spring framework');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (102,'Modern Web Application','CS-525','MWA','Angular Framework');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (103,'Web Application Programing','CS-578','WAP','HTML CSS JQUERY');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (104,'Modern Programming Practice','CS-443','MPP','Java 8 ');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
 
 
+INSERT INTO SECTION (id,professor,course,duration) VALUES (101,101,102,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (102,102,101,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (103,104,103,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (104,105,104,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (105,103,105,101);
+
+
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,101);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,102);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,103);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,104);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,105);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,106);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,107);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,108);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,109);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,110);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,111);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,112);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,113);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,114);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,115);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,116);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,117);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,118);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,119);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,120);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,121);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,122);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,123);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,124);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,125);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,126);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,127);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,128);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,129);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,130);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,131);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,132);
 
 
 

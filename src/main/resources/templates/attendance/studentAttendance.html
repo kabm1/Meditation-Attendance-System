@@ -9,11 +9,23 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">See Student Attendance </h4>
-                <form class="forms-sample" th:action="@{/attendance/view}" method="post" >
+                <form class="forms-sample" <!--th:action="@{/attendance/view}"--> method="post" >
                     <div class="form-group" th:classappend="${#fields.hasErrors('duration')} ? 'border-danger' : ''">
                         <label
-                                for="duration"><span th:text="#{attendance.student}">Student</span></label>
-                        <select id="duration" class="form-control" name="student">
+                                for="duration"><span th:text="#{event.form.duration}">Duration</span></label>
+                        <select id="duration" class="form-control" >
+                            <option value="">Select Duration</option>
+                            <option th:each="dur: ${durations}"
+                                    th:value="${dur.id}"
+                                    th:text="${dur.name}">
+
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('duration')} ? 'border-danger' : ''">
+                        <label
+                                for="student"><span th:text="#{attendance.student}">Student</span></label>
+                        <select id="student" class="form-control" name="student">
                             <option value="">Select Student</option>
                             <option th:each="stu: ${students}"
                                     th:value="${stu.id}"
@@ -42,6 +54,38 @@
             </div>
         </div>
     </div>
+</div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+
+    $('#duration').change(function () {
+
+        let block=$('#duration').val();
+        let data = { 'block': block };
+        $.ajax({
+            type:'post',
+            url:contextRoot+'/attendance/getStudents',
+            date:data,
+            contentType: 'application/json',
+            dataType:'json',
+            success: function (data) {
+                let student=$('#student');
+                student.empty();
+                student.append('<option value="">Select a student</option>>');
+                $.each(data,function (i,stu) {
+                    student.append('<option value="data.id">data.firstName data.lastName</option>');
+                })
+            }
+
+        });
+
+
+    });
+
+
+    /*]]>*/
+</script>
 </div>
 </body>
 </html>
