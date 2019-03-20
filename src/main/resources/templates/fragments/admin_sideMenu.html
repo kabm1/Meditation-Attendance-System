@@ -43,7 +43,7 @@
                             <a class="nav-link" th:href="@{/event/list}">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/event/attendance}">Attendance Record</a>
+                            <a class="nav-link" th:href="@{/event/uploadFile}">Upload Attendance</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" th:href="@{/eventType/list}">Event Type</a>
@@ -58,6 +58,12 @@
                     <i class="menu-icon mdi mdi-television"></i>
                     <span class="menu-title">Student</span>
                  </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/student/attendace}" href="index.html">
+                    <i class="menu-icon mdi mdi-television"></i>
+                    <span class="menu-title">Student Attendance</span>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/course/list}" href="index.html">

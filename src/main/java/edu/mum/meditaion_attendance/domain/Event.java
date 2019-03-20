@@ -23,7 +23,7 @@ public class Event implements Serializable {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "type")
+    @JoinColumn(name = "event_type")
     private EventType eventType;
 
     @NotNull

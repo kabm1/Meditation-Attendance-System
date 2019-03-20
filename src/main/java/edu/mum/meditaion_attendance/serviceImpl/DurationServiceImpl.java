@@ -6,6 +6,7 @@ import edu.mum.meditaion_attendance.service.DurationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,5 +41,15 @@ public class DurationServiceImpl implements DurationService {
         List<Duration> durations=findAll();
         return durations.stream().filter(duration -> duration.getEndDate().getYear() == year).collect(Collectors.toList());
 
+    }
+
+    @Override
+    public Duration findByDate(LocalDate localDate) {
+        List<Duration> durations=findAll();
+        Duration duration= durations.stream().filter(date -> {
+            return ((localDate.isAfter(date.getStartDate()) && localDate.isBefore(date.getEndDate())) || localDate.isEqual(date.getEndDate()) || localDate.isEqual(date.getStartDate()) );
+
+        }).findFirst().orElse(null);
+        return duration;
     }
 }

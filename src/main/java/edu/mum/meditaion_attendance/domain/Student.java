@@ -22,7 +22,7 @@ public class Student extends Person {
     private Long id;
 
     @NotBlank
-    @Size(min = 6,max = 6)
+    @Size(min = 9,max = 12)
     private String studentId;
     @NotBlank
     private String barCode;
@@ -33,6 +33,6 @@ public class Student extends Person {
 
     @StudentPhone
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="phone_id",nullable = false)
+    @JoinColumn(name="phone_id",nullable = true)
     private Phone phone;
 }

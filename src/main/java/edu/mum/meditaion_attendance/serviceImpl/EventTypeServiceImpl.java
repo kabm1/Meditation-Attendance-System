@@ -1,5 +1,6 @@
 package edu.mum.meditaion_attendance.serviceImpl;
 
+import edu.mum.meditaion_attendance.domain.Duration;
 import edu.mum.meditaion_attendance.domain.EventType;
 import edu.mum.meditaion_attendance.repository.EventTypeRepository;
 import edu.mum.meditaion_attendance.service.EventTypeService;
@@ -31,5 +32,10 @@ public class EventTypeServiceImpl implements EventTypeService {
     @Override
     public List<EventType> findAll() {
         return (List<EventType>)eventTypeRepository.findAll();
+    }
+
+    @Override
+    public EventType findByShortName(String shortName) {
+        return eventTypeRepository.findByShortName(shortName);
     }
 }
