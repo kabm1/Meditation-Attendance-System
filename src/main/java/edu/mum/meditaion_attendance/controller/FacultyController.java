@@ -1,7 +1,6 @@
 package edu.mum.meditaion_attendance.controller;
 
 import edu.mum.meditaion_attendance.domain.Faculty;
-import edu.mum.meditaion_attendance.domain.Student;
 import edu.mum.meditaion_attendance.service.FacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,17 +21,17 @@ public class FacultyController {
     public String listFaculty(Model model){
         List<Faculty> faculties= facultyService.findFirstTen();
         model.addAttribute("faculties",faculties);
-        return "FacultyList";
+        return "faculty/FacultyList";
 
     }
     @GetMapping("/add")
     public String addFaculty(@ModelAttribute Faculty faculty, Model model){
-        return "FacultyForm";
+        return "faculty/FacultyForm";
     }
     @PostMapping("/add")
     public String saveFaculty(@Valid @ModelAttribute("faculty") Faculty faculty, BindingResult result, RedirectAttributes redirectAttributes){
         if(result.hasErrors()){
-            return "FacultyForm";
+            return "faculty/FacultyForm";
         }
         Faculty faculty1=facultyService.save(faculty);
         redirectAttributes.addFlashAttribute("faculty",faculty1);
@@ -40,7 +39,7 @@ public class FacultyController {
     }
     @GetMapping("/facultyDetails")
     public String getDetails(Model model){
-        return "FacultyDetails";
+        return "faculty/FacultyDetails";
     }
     @GetMapping("/delete")
     public String removeFaculty(@RequestParam("id") Long id, Model model){
@@ -52,14 +51,14 @@ public class FacultyController {
     public String facultyDetails(@RequestParam("id") Long id,Model model){
         Faculty faculty= facultyService.findById(id);
         model.addAttribute("faculty",faculty);
-        return "FacultyDetails";
+        return "faculty/FacultyDetails";
 
     }
     @GetMapping("/edit")
     public String editStudent(@RequestParam("id") Long id, Model model){
         Faculty faculty= facultyService.findById(id);
-        model.addAttribute("student",faculty);
-        return "FacultyForm";
+        model.addAttribute("faculty",faculty);
+        return "faculty/FacultyForm";
     }
 
 }
