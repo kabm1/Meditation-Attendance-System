@@ -15,6 +15,11 @@ public class FacultyServiceImpl implements FacultyService {
     private FacultyRepository facultyRepository;
 
     @Override
+    public List<Faculty> getAllFaculties() {
+        return (List<Faculty>) facultyRepository.findAll();
+    }
+
+    @Override
     public Faculty save(Faculty faculty) {
         return  facultyRepository.save(faculty);
     }
