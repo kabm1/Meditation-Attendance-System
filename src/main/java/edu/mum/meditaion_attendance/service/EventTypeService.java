@@ -1,5 +1,6 @@
 package edu.mum.meditaion_attendance.service;
 
+import edu.mum.meditaion_attendance.domain.Duration;
 import edu.mum.meditaion_attendance.domain.EventType;
 import org.springframework.stereotype.Service;
 
@@ -11,4 +12,5 @@ public interface EventTypeService {
     EventType save(EventType eventType);
     void delete(Long id);
     List<EventType> findAll();
+    EventType findByShortName(String shortName);
 }

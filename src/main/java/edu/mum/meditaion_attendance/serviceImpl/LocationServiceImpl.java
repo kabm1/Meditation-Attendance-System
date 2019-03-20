@@ -28,5 +28,8 @@ public class LocationServiceImpl implements LocationService {
         return  locationRepository.save(location);
     }
 
-
+    @Override
+    public Location findByShortName(String shortName) {
+        return locationRepository.findByShortName(shortName);
+    }
 }

@@ -3,6 +3,7 @@ package edu.mum.meditaion_attendance.service;
 import edu.mum.meditaion_attendance.domain.Duration;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -12,4 +13,5 @@ public interface DurationService {
     void delete(Long id);
     Duration findById(Long id);
     List<Duration> findByYear(int year);
+    Duration findByDate(LocalDate localDate);
 }

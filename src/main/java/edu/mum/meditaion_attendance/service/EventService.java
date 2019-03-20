@@ -3,6 +3,7 @@ package edu.mum.meditaion_attendance.service;
 import edu.mum.meditaion_attendance.domain.Duration;
 import edu.mum.meditaion_attendance.domain.Event;
 import edu.mum.meditaion_attendance.domain.EventType;
+import edu.mum.meditaion_attendance.domain.Location;
 
 import java.util.List;
 
@@ -14,5 +15,6 @@ public interface EventService {
     Event findByDuration(Duration duration);
     List<Event> findByType(EventType type);
     Event findByDurationAndType(Duration duration, EventType type);
+    Event findByDurationAndTypeAndLocation(Duration duration, EventType eventType, Location location);
 
 }

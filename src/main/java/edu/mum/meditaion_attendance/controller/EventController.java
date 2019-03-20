@@ -1,19 +1,20 @@
 package edu.mum.meditaion_attendance.controller;
 
 import edu.mum.meditaion_attendance.domain.Event;
-import edu.mum.meditaion_attendance.service.DurationService;
-import edu.mum.meditaion_attendance.service.EventService;
-import edu.mum.meditaion_attendance.service.EventTypeService;
-import edu.mum.meditaion_attendance.service.LocationService;
+import edu.mum.meditaion_attendance.domain.EventAttendanceRecord;
+import edu.mum.meditaion_attendance.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.io.File;
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 @RequestMapping("/event")
@@ -24,17 +25,20 @@ public class EventController {
     private DurationService durationService;
     private EventTypeService eventTypeService;
     private LocationService locationService;
+    private EventAttendanceRecordService eventAttendanceRecordService;
 
 
     @Autowired
     public EventController(EventService eventService,
                            DurationService durationService,
                            LocationService locationService,
-                           EventTypeService eventTypeService) {
+                           EventTypeService eventTypeService,
+                           EventAttendanceRecordService eventAttendanceRecordService) {
         this.eventService = eventService;
         this.durationService=durationService;
         this.eventTypeService=eventTypeService;
         this.locationService=locationService;
+        this.eventAttendanceRecordService =eventAttendanceRecordService;
     }
 
 
@@ -98,6 +102,21 @@ public class EventController {
 
         return "redirect:/event/list";
     }
+
+    @PostMapping("attendanceRecord")
+    public String uploadFile(@RequestParam("attendanceRecord")MultipartFile file,RedirectAttributes redirect){
+       // List<EventAttendanceRecord> records=eventAttendanceRecordService.saveAutomaticRecords(file);
+       List<EventAttendanceRecord> records=eventAttendanceRecordService.saveManualRecords(file);
+        redirect.addFlashAttribute("records",records);
+        return "redirect:/event/uploadFile";
+    }
+    @GetMapping("uploadFile")
+    public String fileUpload(Model model){
+        return "event/attendanceRecord/form";
+    }
+
+
+
     private Model getDependecyValue(Model model){
         model.addAttribute("durations",durationService.findByYear( LocalDate.now().getYear()));
         model.addAttribute("eventTypes",eventTypeService.findAll());
