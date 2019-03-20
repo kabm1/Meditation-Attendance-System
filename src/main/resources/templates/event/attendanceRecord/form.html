@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div th:if="${records!= null && !records.empty}" th:replace="event/attendanceRecord/lists :: recorddList"></div>
+    <div th:if="${diplay}" th:replace="event/attendanceRecord/lists :: recorddList"></div>
 </div>
 </body>
 </html>

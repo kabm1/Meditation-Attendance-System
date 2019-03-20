@@ -41,7 +41,7 @@
                             <td th:text="${student.lastName}">Beck</td>
                             <td th:text="${student.studentId}">Student Id</td>
                             <td th:text="${student.email}">Student Email</td>
-                            <td th:text="${student.entry}">May 15, 2015</td>
+                            <td th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}">May 15, 2015</td>
                             <td>
                                 <a th:href="@{'/student/edit'+'?'+'id='+${student.id}}">
                                     <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
