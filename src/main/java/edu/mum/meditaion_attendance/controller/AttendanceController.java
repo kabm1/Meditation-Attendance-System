@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -54,10 +55,25 @@ public class AttendanceController {
 
     }
     @PostMapping("view")
-    public String viewStudentAttendance(@RequestParam("student") Long student, @RequestParam("duration") Long duration){
-        Student student1= studentService.findById(student);
+    public String viewStudentAttendance(@RequestParam("student") Long student, @RequestParam("duration") Long duration, RedirectAttributes redirect){
         Duration duration1=durationService.findById(duration);
-        attendanceService.getBlockAttendance(student1,duration1);
-        return null;
+        if(student == 0){
+            Faculty faculty= facultyService.findById(101L);
+            Section section=sectionService.findByFacultyAndDuration(faculty,duration1);
+            redirect.addFlashAttribute("attendances",attendanceService.getAllStudentAttendance(section.getStudents(),duration1));
+        }else {
+            Student student1 = studentService.findById(student);
+            redirect.addFlashAttribute("attendance",  attendanceService.getBlockAttendance(student1, duration1));
+        }
+        return "redirect:/attendance/viewStudentAttendance";
     }
+
+    @GetMapping("viewStudentAttendance")
+    public String viewStudentAttendance(Model model){
+        Faculty faculty= facultyService.findById(101L);
+        model.addAttribute("durations",sectionService.blockTeachByProfessors(faculty));
+        return "attendance/studentAttendance";
+    }
+
+
 }
