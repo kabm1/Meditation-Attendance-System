@@ -92,6 +92,13 @@ INSERT INTO STUDENT(id,student_id,bar_code,entry,first_name,last_name,email,phon
 INSERT INTO STUDENT(id,student_id,bar_code,entry,first_name,last_name,email,phone_id) VALUES (132,'000-98-1262','8001',TO_DATE('03/01/2019','MM/DD/YYYY'),'Estes','Jonah ','mbernahu@mum.edu',null);
 
 
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (101,'Web Application Architecture','CS-543','WAA','Spring framework');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (102,'Modern Web Application','CS-525','MWA','Angular Framework');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (103,'Web Application Programing','CS-578','WAP','HTML CSS JQUERY');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (104,'Modern Programming Practice','CS-443','MPP','Java 8 ');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
+
+
 
 
 
