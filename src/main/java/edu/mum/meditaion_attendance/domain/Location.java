@@ -3,6 +3,7 @@ package edu.mum.meditaion_attendance.domain;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -10,13 +11,17 @@ import java.io.Serializable;
 public class Location  implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotBlank
     private String name;
-    @Column(name = "short_name")
-    private String shortName;
 
+    @Column(name = "short_name")
+    @NotBlank
+    private String shortName;
+    @NotBlank
     private String description;
+    @NotBlank
     private Long capacity;
 
      public Location(){

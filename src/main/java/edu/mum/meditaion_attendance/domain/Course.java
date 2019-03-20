@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import java.time.Duration;
 
 @Entity
@@ -14,10 +15,15 @@ public class Course {
     @Id
     @GeneratedValue
     private  Long id;
+    @NotBlank
     private String CourseName;
+    @NotBlank
     private String courseId;
+    @NotBlank
     private Faculty faculty;
+    @NotBlank
     private Duration duration;
+    @NotBlank
     private Student student;
 
     public Course(){

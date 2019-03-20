@@ -7,8 +7,8 @@
 <div th:fragment="content">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <a  th:href="@{/student/add}" href="#">
-                <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Student</button>
+            <a  th:href="@{/location/details}" href="#">
+                <button type="button" class="btn btn-inverse-primary btn-rounded ">Add  Student</button>
             </a>
             <div class="card-body">
                 <h4 class="card-title"></h4>
@@ -31,7 +31,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                       <tr th:each="student:${students}">
+                       <tr th:each="location:${students}">
                             <td class="py-1" >
                                 <span th:text="${student.profilePicture}"></span>
                                 <!--<img src="../../images/faces-clipart/pic-1.png" alt="image" />-->
