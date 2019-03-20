@@ -12,12 +12,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/student")
@@ -31,19 +29,19 @@ public class StudentController {
         List<Student> students=studentService.getFirstTen();
 
         model.addAttribute("students",students);
-        return "StudentList";
+        return "student/StudentList";
     }
 
     @GetMapping("/add")
     public String addStudent(@ModelAttribute("student") Student student,Model model){
-        return "StudentForm";
+        return "student/StudentForm";
     }
 
     @PostMapping("/add")
     public String saveStudent(@Valid @ModelAttribute("student") Student student,
                               BindingResult result,@RequestParam("profilePicture") MultipartFile studentImage ,RedirectAttributes redirectAttributes, HttpServletRequest request){
         if(result.hasErrors()){
-            return "StudentForm";
+            return "student/StudentForm";
         }
 
         String[] suppressedFields = result.getSuppressedFields();
@@ -97,7 +95,7 @@ public class StudentController {
     }
     @GetMapping("/studentDetails")
     public String getDetails(Model model){
-        return "StudentDetails";
+        return "student/StudentDetails";
     }
 
     @GetMapping("/delete")
@@ -110,14 +108,14 @@ public class StudentController {
     public String studentDetails(@RequestParam("id") Long id,Model model){
         Student student= studentService.findById(id);
         model.addAttribute("student",student);
-        return "StudentDetails";
+        return "student/StudentDetails";
 
     }
     @GetMapping("/edit")
     public String editStudent(@RequestParam("id") Long id, Model model){
         Student student= studentService.findById(id);
         model.addAttribute("student",student);
-        return "StudentEdit";
+        return "student/StudentEdit";
     }
 
 }

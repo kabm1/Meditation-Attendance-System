@@ -13,14 +13,14 @@
 
         <div class="form-group">
                 <label
-                        for="userName"><span th:text="#{user.form.userName}">User Name</span></label>
+                        for="userName">User Name</label>
                 <input type="text" th:field="*{userName}" class="form-control" id="userName" placeholder="User Name">
                 <p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
                    th:errorclass="fieldError">Invalid User Name</p>
         </div>
         <div class="form-group">
                 <label
-                        for="password"><span th:text="#{user.form.password}">Password</span></label>
+                        for="password">Password</label>
                 <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Pass word">
                 <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
                    th:errorclass="fieldError">Invalid Password</p>
@@ -32,3 +32,4 @@
 
 
 </body>
+</html>

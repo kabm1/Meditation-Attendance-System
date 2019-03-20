@@ -5,7 +5,7 @@ import edu.mum.meditaion_attendance.domain.Faculty;
 import java.util.List;
 
 public interface FacultyService {
-    void save(Faculty faculty);
+    Faculty save(Faculty faculty);
     Faculty findByEmail(String email);
     Faculty findById(Long id);
     void delete(Faculty faculty);
