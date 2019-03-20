@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TestController {
 
-    @RequestMapping(value= {"/","/login"}, method = RequestMethod.GET)
+    /*@RequestMapping(value= {"/","/login"}, method = RequestMethod.GET)
     public String firstPage(){
         return "index";
     }
+}*/
 }
