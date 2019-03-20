@@ -33,10 +33,12 @@ public class StudentController {
         model.addAttribute("students",students);
         return "StudentList";
     }
+
     @GetMapping("/add")
     public String addStudent(@ModelAttribute("student") Student student,Model model){
         return "StudentForm";
     }
+
     @PostMapping("/add")
     public String saveStudent(@Valid @ModelAttribute("student") Student student,
                               BindingResult result,@RequestParam("profilePicture") MultipartFile studentImage ,RedirectAttributes redirectAttributes, HttpServletRequest request){

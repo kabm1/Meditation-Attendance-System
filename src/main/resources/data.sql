@@ -17,9 +17,11 @@ INSERT INTO EVENT_TYPE(id,name,short_name,description,start_time,end_time) VALUE
 INSERT INTO EVENT_TYPE(id,name,short_name,description,start_time,end_time) VALUES(103,'DC Lecture','DC','extra knowledge',TO_DATE(' 01/01/2001 01:30 AM','MM/DD/YYYY HH:mi AM '),TO_DATE(' 01/01/2001 03:15 AM','MM/DD/YYYY HH:mi PM '));
 
 
+
 INSERT INTO LOCATION(id,name,short_name,description,capacity) VALUES(101,'Dalbi hall ','DB','it is a hall which locate in algiro',150);
 INSERT INTO LOCATION(id,name,short_name,description,capacity) VALUES(102,'Boys Golder Dome ','BGD','it is a wide dom ',500);
 INSERT INTO LOCATION(id,name,short_name,description,capacity) VALUES(103,'Girls Golder Dome ','GGD','it is a wide dom',500);
+
 
 INSERT INTO EVENT(id,description,duration,event_type,location) VALUES(101,'event for meditation',101,101,101);
 INSERT INTO EVENT(id,description,duration,event_type,location) VALUES(102,'event for meditation',102,101,101);
@@ -84,4 +86,15 @@ INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(103,'Clyde','Ruby','cr
 INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(104,'Bruce','Lester','blester@mum.edu');
 INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(105,'Renuka','Mohanraj','rmohanraj@mum.edu');
 INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(106,'Andualem','Hailu','aabebe@mum.edu');
+
+
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (101,'Web Application Architecture','CS-543','WAA','Spring framework');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (102,'Modern Web Application','CS-525','MWA','Angular Framework');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (103,'Web Application Programing','CS-578','WAP','HTML CSS JQUERY');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (104,'Modern Programming Practice','CS-443','MPP','Java 8 ');
+INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
+
+
+
+
 

@@ -8,8 +8,6 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Data
-@NoArgsConstructor
 public class Section implements Serializable {
 
     @Id
@@ -31,4 +29,44 @@ public class Section implements Serializable {
     @OneToMany
     @JoinTable(name = "student_in_section")
     private List<Student> students;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Faculty getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Faculty professor) {
+        this.professor = professor;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 }

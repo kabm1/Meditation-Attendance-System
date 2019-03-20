@@ -1,10 +1,8 @@
 package edu.mum.meditaion_attendance.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.Duration;
 
 @Entity
@@ -12,16 +10,35 @@ import java.time.Duration;
 public class Course {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private  Long id;
-    private String CourseName;
+    @NotBlank
+    private String name;
+    @NotBlank
     private String courseId;
-    private Faculty faculty;
-    private Duration duration;
-    private Student student;
+    @NotBlank
+    private String shortName;
+    @NotBlank
+     private String description ;
 
     public Course(){
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCourseId() {
@@ -32,35 +49,19 @@ public class Course {
         this.courseId = courseId;
     }
 
-    public Faculty getFaculty() {
-        return faculty;
+    public String getShortName() {
+        return shortName;
     }
 
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
     }
 
-    public Duration getDuration() {
-        return duration;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public String getCourseName() {
-        return CourseName;
-    }
-
-    public void setCourseName(String courseName) {
-        CourseName = courseName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

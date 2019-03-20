@@ -103,11 +103,19 @@ public class EventController {
         return "redirect:/event/list";
     }
 
-    @PostMapping("attendanceRecord")
-    public String uploadFile(@RequestParam("attendanceRecord")MultipartFile file,RedirectAttributes redirect){
-       // List<EventAttendanceRecord> records=eventAttendanceRecordService.saveAutomaticRecords(file);
-       List<EventAttendanceRecord> records=eventAttendanceRecordService.saveManualRecords(file);
+    @PostMapping("attendanceRecordAutomatic")
+    public String AutomaticUploadFile(@RequestParam("attendanceRecord")MultipartFile file,RedirectAttributes redirect){
+       List<EventAttendanceRecord> records=eventAttendanceRecordService.saveAutomaticRecords(file);
         redirect.addFlashAttribute("records",records);
+        redirect.addFlashAttribute("successMessage","automatic.file.upload.success");
+        return "redirect:/event/uploadFile";
+    }
+    @PostMapping("attendanceRecordManual")
+    public String ManualUploadFile(@RequestParam("attendanceRecord")MultipartFile file,RedirectAttributes redirect){
+
+        List<EventAttendanceRecord> records=eventAttendanceRecordService.saveManualRecords(file);
+        redirect.addFlashAttribute("records",records);
+        redirect.addFlashAttribute("successMessage","manual.file.upload.success");
         return "redirect:/event/uploadFile";
     }
     @GetMapping("uploadFile")
