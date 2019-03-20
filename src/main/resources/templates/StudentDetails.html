@@ -2,8 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       lang="en"
       layout:decorator="layout">
-<head th:include="layout::headerFrag(pageTitle='studentList')"></head>
-<body th:include="layout::bodyFrag(pageBody='studentList')">
+<head th:include="layout::headerFrag(pageTitle='Student Details')"></head>
+<body th:include="layout::bodyFrag(pageBody='Student Details')">
 <div th:fragment="content">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
@@ -30,18 +30,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:if="${students.empty}">
-                            <td colspan="4">No Data</td>
-                        </tr>
-                        <tr th:each="student:${students}">
+
+                        <tr>
                             <td class="py-1">
-                               <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
+                                <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
                             </td>
-                            <td th:text="${student.firstName}">Herman</td>
-                            <td th:text="${student.lastName}">Beck</td>
-                            <td th:text="${student.studentId}">Student Id</td>
-                            <td th:text="${student.email}">Student Email</td>
-                            <td th:text="${student.entry}">May 15, 2015</td>
+                            <td th:text="${student.firstName}"></td>
+                            <td th:text="${student.lastName}"></td>
+                            <td th:text="${student.studentId}"></td>
+                            <td th:text="${student.email}"></td>
+                            <td th:text="${student.entry}"></td>
                             <td>
                                 <a th:href="@{'/student/edit'+'?'+'id='+${student.id}}">
                                     <button class="btn btn-blue btn-rounded btn-fw">Edit</button>

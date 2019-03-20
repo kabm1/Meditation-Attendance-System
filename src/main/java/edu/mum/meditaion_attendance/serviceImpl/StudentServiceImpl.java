@@ -1,6 +1,8 @@
 package edu.mum.meditaion_attendance.serviceImpl;
 
+import edu.mum.meditaion_attendance.domain.Phone;
 import edu.mum.meditaion_attendance.domain.Student;
+import edu.mum.meditaion_attendance.repository.PhoneRepository;
 import edu.mum.meditaion_attendance.repository.StudentRepository;
 import edu.mum.meditaion_attendance.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
+    private PhoneRepository phoneRepository;
 
     @Override
     public Student findById(Long id) {
@@ -56,6 +60,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student save(Student student) {
+        Phone phone=phoneRepository.save(student.getPhone());
+        student.setPhone(phone);
         return studentRepository.save(student);
     }
 
