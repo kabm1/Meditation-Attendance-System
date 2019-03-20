@@ -15,8 +15,8 @@
                         <li th:each="err: ${#fields.errors('*')}" th:text="${err}">Input is Incorrect</li>
                     </ul>
                     <div class="form-group" >
-                    <input type="hidden" th:field="*{id}" class="form-control" id="id" >
-                </div>
+                        <input type="hidden" th:field="*{id}" class="form-control" id="id" >
+                    </div>
 
                     <div class="form-group">
                         <label
