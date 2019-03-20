@@ -95,6 +95,7 @@ INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (104,'Modern
 INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
 
 
+REPLACE INTO `role` VALUES (1,'ADMIN');
 
 
 

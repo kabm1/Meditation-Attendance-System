@@ -39,18 +39,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .usersByUsernameQuery(usersQuery)
               .authoritiesByUsernameQuery(rolesQuery)
               .dataSource(dataSource)
-
               .passwordEncoder(bCryptPasswordEncoder);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-      http.
-              authorizeRequests().anyRequest().permitAll()
-      .antMatchers("/h2-console/**").permitAll()
+  http.
+      authorizeRequests()
+              .antMatchers("/").permitAll()
+              .antMatchers("/login").permitAll()
+              .antMatchers("/registration").permitAll()
+              .antMatchers("/h2-console/**").permitAll()
               .antMatchers("/h2").permitAll()
-              .and().csrf().disable().formLogin()
+              .antMatchers("/dashboard/**").hasAuthority("ADMIN").anyRequest()
+              //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
+              .authenticated().and().csrf().disable().formLogin()
               .loginPage("/login").failureUrl("/login?error=true")
               .defaultSuccessUrl("/home")
               .usernameParameter("username")
@@ -61,24 +64,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .accessDeniedPage("/access-denied");
 
       http.headers().frameOptions().disable();
-              /*.antMatchers("/").permitAll()
-              .antMatchers("/login").permitAll()
-              .antMatchers("/registration").permitAll()
-              .antMatchers("/h2-console/**").permitAll()
-              .antMatchers("/h2").permitAll()
-              .antMatchers("/dashboard/**").hasAuthority("ADMIN").anyRequest()
-              //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
-              .authenticated().and().csrf().disable().formLogin()
-              .loginPage("/login").failureUrl("/login?error=true")
-              .defaultSuccessUrl("/dashboard")
-              .usernameParameter("email")
-              .passwordParameter("password")
-              .and().logout()
-              .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-              .logoutSuccessUrl("/").and().exceptionHandling()
-              .accessDeniedPage("/access-denied");
-
-      http.headers().frameOptions().disable();*/
     }
 
     @Override
