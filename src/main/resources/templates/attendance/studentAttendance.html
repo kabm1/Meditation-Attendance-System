@@ -3,23 +3,35 @@
       lang="en"
       layout:decorator="layout">
 <head th:include="layout::headerFrag(pageTitle='Add Event')"></head>
-<body th:include="layout::bodyFrag(pageBody='Add Event')">
+<div th:include="layout::bodyFrag(pageBody='Add Event')">
 <div th:fragment="content">
     <div class=" grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">See Student Attendance </h4>
-                <form class="forms-sample" th:action="@{/attendance/view}" method="post" >
-                    <div class="form-group" th:classappend="${#fields.hasErrors('duration')} ? 'border-danger' : ''">
+                <form class="forms-sample" th:action="@{/attendance/view}"  method="post" >
+                    <div class="form-group" >
                         <label
-                                for="duration"><span th:text="#{attendance.student}">Student</span></label>
-                        <select id="duration" class="form-control" name="student">
+                                for="duration"><span th:text="#{event.form.duration}">Duration</span></label>
+                        <select id="duration" class="form-control" >
+                            <option value="">Select Duration</option>
+                            <option th:each="dur: ${durations}"
+                                    th:value="${dur.id}"
+                                    th:text="${dur.name}">
+
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group" >
+                        <label
+                                for="student"><span th:text="#{attendance.student}">Student</span></label>
+                        <select id="student" class="form-control" name="student">
                             <option value="">Select Student</option>
-                            <option th:each="stu: ${students}"
+                            <!--<option th:each="stu: ${students}"
                                     th:value="${stu.id}"
                                     th:text="${stu.firstName+ ' '+ stu.lastName}">
 
-                            </option>
+                            </option>-->
                         </select>
 
                     </div>
@@ -43,5 +55,42 @@
         </div>
     </div>
 </div>
+</div>
 </body>
+<div layout:fragment="footer-script">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+
+        $('#duration').change(function () {
+            console.log("this is a change function");
+            console.log(contextRoot);
+
+            let block=$('#duration').val();
+            console.log("this is duration value "+ block);
+            let data = { 'block': block };
+            console.log(data);
+
+            $.ajax({
+                type:'POST',
+                url:'attendance/getStudents?block='+block,
+                dataType:'json',
+                success: function (data) {
+                    let student=$('#student');
+                    student.empty();
+                    student.append('<option value="">Select a student</option>>');
+                    $.each(data,function (i,stu) {
+                        student.append('<option value="'+stu.id+'">'+ stu.firstName+' '+ stu.lastName +'</option>');
+                    })
+                }
+
+            });
+
+
+        });
+
+
+        /*]]>*/
+    </script>
+</div>
 </html>

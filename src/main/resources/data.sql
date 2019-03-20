@@ -95,7 +95,49 @@ INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (104,'Modern
 INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
 
 
+
 REPLACE INTO `role` VALUES (1,'ADMIN');
+
+INSERT INTO SECTION (id,professor,course,duration) VALUES (101,101,102,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (102,102,101,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (103,104,103,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (104,105,104,101);
+INSERT INTO SECTION (id,professor,course,duration) VALUES (105,103,105,101);
+
+
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,101);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,102);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,103);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,104);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,105);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,106);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,107);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,108);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,109);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,110);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,111);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,112);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,113);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,114);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,115);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,116);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,117);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,118);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,119);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,120);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,121);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,122);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,123);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,124);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,125);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,126);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,127);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (105,128);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,129);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,130);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,131);
+INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,132);
+
 
 
 
