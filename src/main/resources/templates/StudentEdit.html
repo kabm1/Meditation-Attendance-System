@@ -18,6 +18,9 @@
                     <ul th:if="${#fields.hasErrors('*')}">
                         <li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
                     </ul>
+                    <div class="form-group" style="display: none">
+                        <input type="text" th:field="*{id}" class="form-control" id="id"/>
+                    </div>
 
                     <div class="form-group">
                         <label
@@ -82,7 +85,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success mr-2" th:text="#{Student.form.button.add}"></button>
+                    <button type="submit" class="btn btn-success mr-2" th:text="#{Student.form.button.edit}"></button>
                     <button type="reset" class="btn btn-success mr-2" th:text="#{Student.form.button.reset}"></button>
                 </form>
             </div>
