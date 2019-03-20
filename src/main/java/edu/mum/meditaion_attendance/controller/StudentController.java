@@ -117,5 +117,9 @@ public class StudentController {
         model.addAttribute("student",student);
         return "student/StudentEdit";
     }
+    @GetMapping("/studentmenu")
+    public String getStudentSideMenu(Model model){
+        return "fragments/student_sideMenu";
+    }
 
 }

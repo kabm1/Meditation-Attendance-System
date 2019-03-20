@@ -14,8 +14,8 @@
         <div class="form-group">
                 <label
                         for="userName">User Name</label>
-                <input type="text" th:field="*{userName}" class="form-control" id="userName" placeholder="User Name">
-                <p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+                <input type="text" th:field="*{username}" class="form-control" id="userName" placeholder="User Name">
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
                    th:errorclass="fieldError">Invalid User Name</p>
         </div>
         <div class="form-group">
@@ -26,7 +26,7 @@
                    th:errorclass="fieldError">Invalid Password</p>
         </div>
 
-        <button type="submit" class="btn btn-success mr-2" th:value="#{user.form.login}">Login</button>
+        <button type="submit" class="btn btn-success mr-2" >Login</button>
 
 </form>
 
