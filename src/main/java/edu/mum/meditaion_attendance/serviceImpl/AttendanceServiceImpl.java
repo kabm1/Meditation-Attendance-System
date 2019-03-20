@@ -58,6 +58,8 @@ public class AttendanceServiceImpl implements AttendanceService {
         Integer sessionInBlock=event.getDuration().getNumberOfDays();
         Integer dayPresent=(int)studentRecord.count();
         Double percentageAttend= calculateExtraPointService.getPercentageAttendance(sessionInBlock,dayPresent);
+        blockAttendance.setStudent(student);
+        blockAttendance.setDuration(event.getDuration());
         blockAttendance.setSessionsInBlock(sessionInBlock);
         blockAttendance.setDaysPresent(dayPresent);
         blockAttendance.setPercentageAttended(percentageAttend);

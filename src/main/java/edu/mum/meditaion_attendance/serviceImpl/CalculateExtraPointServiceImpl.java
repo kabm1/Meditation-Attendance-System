@@ -5,6 +5,8 @@ import edu.mum.meditaion_attendance.util.MeditationAttendancePercentage;
 import edu.mum.meditaion_attendance.util.MeditationExtraPoint;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
+
 @Service
 public class CalculateExtraPointServiceImpl implements CalculateExtraPointService {
     @Override
@@ -20,6 +22,8 @@ public class CalculateExtraPointServiceImpl implements CalculateExtraPointServic
 
     @Override
     public Double getPercentageAttendance(Integer sessionInBlock, Integer dayPresent) {
-        return (double) (dayPresent * 100)/sessionInBlock;
+        DecimalFormat df2= new DecimalFormat(".#");
+        Double percentage= (double) ((dayPresent * 100)/sessionInBlock) ;
+        return Double.parseDouble(percentage.toString());
     }
 }

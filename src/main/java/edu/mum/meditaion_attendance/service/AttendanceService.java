@@ -9,4 +9,5 @@ import java.util.List;
 public interface AttendanceService {
     BlockAttendance getBlockAttendance(Student student, Duration duration);
     List<BlockAttendance> getAllStudentAttendance(List<Student> students, Duration  duration);
+
 }

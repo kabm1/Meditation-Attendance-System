@@ -43,6 +43,9 @@
     <div th:if="${attendance !=null}">
         <div th:replace="attendance/fragments/singleStudentAttendance :: singleStudentAttendance"></div>
     </div>
+    <div th:if="${attendances !=null}">
+        <div th:replace="attendance/fragments/studentsAttendance :: studentAttendance"></div>
+    </div>
 </div>
 </body>
 <div layout:fragment="footer-script">
