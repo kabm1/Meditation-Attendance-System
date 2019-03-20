@@ -76,4 +76,8 @@ public class Event implements Serializable {
     public List<EventAttendanceRecord> getAttendanceRecords() {
         return attendanceRecords;
     }
+
+    public void setAttendanceRecords(List<EventAttendanceRecord> attendanceRecords) {
+        this.attendanceRecords = attendanceRecords;
+    }
 }

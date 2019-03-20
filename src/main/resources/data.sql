@@ -95,6 +95,9 @@ INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (104,'Modern
 INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
 
 
+
+REPLACE INTO `role` VALUES (1,'ADMIN');
+
 INSERT INTO SECTION (id,professor,course,duration) VALUES (101,101,102,101);
 INSERT INTO SECTION (id,professor,course,duration) VALUES (102,102,101,101);
 INSERT INTO SECTION (id,professor,course,duration) VALUES (103,104,103,101);
@@ -134,6 +137,7 @@ INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (104,129);
 INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (103,130);
 INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (102,131);
 INSERT INTO STUDENT_IN_SECTION (section_id,students_id) VALUES (101,132);
+
 
 
 

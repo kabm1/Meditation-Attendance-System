@@ -3,7 +3,7 @@
       lang="en"
       layout:decorator="layout">
 <head th:include="layout::headerFrag(pageTitle='Add Event')"></head>
-<div th:include="layout::bodyFrag(pageBody='Add Event')">
+<body th:include="layout::bodyFrag(pageBody='Add Event')">
 <div th:fragment="content">
     <div class=" grid-margin stretch-card">
         <div class="card">
@@ -13,7 +13,7 @@
                     <div class="form-group" >
                         <label
                                 for="duration"><span th:text="#{event.form.duration}">Duration</span></label>
-                        <select id="duration" class="form-control" >
+                        <select id="duration" name="duration" class="form-control" >
                             <option value="">Select Duration</option>
                             <option th:each="dur: ${durations}"
                                     th:value="${dur.id}"
@@ -39,22 +39,10 @@
                 </form>
             </div>
         </div>
-        <div>
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title">Copulative Attendance info</h2>
-                    <div class="template-demo">
-                        <p>Sessions in block:<strong></strong></p>
-                        <p>Days present:<strong></strong></p>
-                        <p>Percentage attended:<strong></strong></p>
-                        <p>Extra credit points:<strong></strong></p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+    <div th:if="${attendance !=null}">
+        <div th:replace="attendance/fragments/singleStudentAttendance :: singleStudentAttendance"></div>
+    </div>
 </div>
 </body>
 <div layout:fragment="footer-script">
@@ -73,12 +61,13 @@
 
             $.ajax({
                 type:'POST',
-                url:'attendance/getStudents?block='+block,
+                url:'/attendance/getStudents?block='+block,
                 dataType:'json',
                 success: function (data) {
                     let student=$('#student');
                     student.empty();
                     student.append('<option value="">Select a student</option>>');
+                    student.append('<option value="0">ALL</option>>');
                     $.each(data,function (i,stu) {
                         student.append('<option value="'+stu.id+'">'+ stu.firstName+' '+ stu.lastName +'</option>');
                     })
