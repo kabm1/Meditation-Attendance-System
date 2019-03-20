@@ -39,19 +39,19 @@ public class FacultyController {
         return "redirect:/faculty/facultyDetails";
     }
     @GetMapping("/facultyDetails")
-    public String facultyDetails(Model model){
+    public String getDetails(Model model){
         return "FacultyDetails";
     }
     @GetMapping("/delete")
-    public String removeStudent(@RequestParam("id") Long id, Model model){
+    public String removeFaculty(@RequestParam("id") Long id, Model model){
         Faculty faculty= facultyService.findById(id);
         facultyService.delete(faculty);
         return "redirect:/faculty/list";
     }
     @GetMapping("/details")
-    public String studentDetails(@RequestParam("id") Long id,Model model){
+    public String facultyDetails(@RequestParam("id") Long id,Model model){
         Faculty faculty= facultyService.findById(id);
-        model.addAttribute("student",faculty);
+        model.addAttribute("faculty",faculty);
         return "FacultyDetails";
 
     }
@@ -59,7 +59,7 @@ public class FacultyController {
     public String editStudent(@RequestParam("id") Long id, Model model){
         Faculty faculty= facultyService.findById(id);
         model.addAttribute("student",faculty);
-        return "StudentEdit";
+        return "FacultyForm";
     }
 
 }
