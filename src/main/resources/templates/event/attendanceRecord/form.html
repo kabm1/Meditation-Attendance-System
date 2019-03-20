@@ -10,25 +10,39 @@
             <div class="card-body">
                 <h4 class="card-title">Add Event</h4>
                 <p class="card-description">Add an event to collect attendance</p>
-                <form class="forms-sample" th:action="@{/event/attendanceRecord}" enctype="multipart/form-data" method="post" >
+                <form class="forms-sample" th:action="@{/event/attendanceRecordAutomatic}" enctype="multipart/form-data" method="post" >
                     <div class="form-group">
-                        <label>File upload</label>
+                        <label>Upload Automatic Generated File</label>
                         <!--<input type="file" name="attendanceRecord" class="file-upload-default">-->
                         <div class="input-group col-xs-12">
                             <input type="file" name="attendanceRecord" class="form-control file-upload-info"  placeholder="Upload Image">
                             <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-info" type="submit">Upload</button>
+                          <input class="file-upload-browse btn btn-info" type="submit" value="Upload">
                         </span>
                         </div>
+
                     </div>
-<!--
-                    <button type="submit" class="btn btn-success mr-2" th:value="#{form.button.add}">save</button>
--->
                 </form>
+                <form class="forms-sample" th:action="@{/event/attendanceRecordManual}" enctype="multipart/form-data" method="post" >
+                    <div class="form-group">
+                        <label>Upload Manual Generated File</label>
+                        <!--<input type="file" name="attendanceRecord" class="file-upload-default">-->
+                        <div class="input-group col-xs-12">
+                            <input type="file" name="attendanceRecord" class="form-control file-upload-info"  placeholder="Upload Image">
+                            <span class="input-group-append">
+                          <input class="file-upload-browse btn btn-info" type="submit" value="Upload">
+                        </span>
+                        </div>
+
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
-    <div th:if="${diplay}" th:replace="event/attendanceRecord/lists :: recorddList"></div>
+    <div th:if="${successMessage != null}" >
+        <div th:replace="event/attendanceRecord/lists :: recorddList"></div>
+    </div>
 </div>
 </body>
 </html>
