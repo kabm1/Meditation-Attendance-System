@@ -9,11 +9,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
 @Data
-@Entity
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
-public class Role implements Serializable {
+@Entity
+@Table(name = "role")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "role_id")
+    private int id;
+    @Column(name = "role")
+    private String role;
 }
