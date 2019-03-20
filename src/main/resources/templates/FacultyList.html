@@ -36,13 +36,13 @@
                             <td th:text="${faculty.lastName}">Beck</td>
                             <td th:text="${faculty.email}">Student Email</td>
                             <td>
-                                <a th:href="@{'/student/edit'+'?'+'id='+${faculty.id}}">
+                                <a th:href="@{'/faculty/edit'+'?'+'id='+${faculty.id}}">
                                     <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
                                 </a>
-                                <a th:href="@{'/student/delete'+'?'+'id='+${faculty.id}}">
+                                <a th:href="@{'/faculty/delete'+'?'+'id='+${faculty.id}}">
                                     <button class="btn btn-blue btn-rounded btn-fw">Remove</button>
                                 </a>
-                                <a th:href="@{'/student/details'+'?'+'id='+${faculty.id}}">
+                                <a th:href="@{'/faculty/details'+'?'+'id='+${faculty.id}}">
                                     <button class="btn btn-blue btn-rounded btn-fw">Details</button>
                                 </a>
                             </td>

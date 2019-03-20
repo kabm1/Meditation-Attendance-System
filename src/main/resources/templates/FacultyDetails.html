@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='Faculty Details')"></head>
+<body th:include="layout::bodyFrag(pageBody='Faculty Details')">
+<div th:fragment="content">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <a th:href="@{/faculty/add}" href="#">
+                <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Faculty</button>
+            </a>
+            <div class="card-body">
+                <h4 class="card-title">Faculty Added Successfully!!!  </h4>
+                <p class="card-description">
+                    <code></code>
+                </p>
 
+                <div class="table-responsive">
+                    <div>
+                        <img th:src="@{../static/images/admin.jpg}" alt="Image">
+                    </div>
+                    First Name: <span th:text="${faculty.firstName}"></span><br>
+                    Last Name: <span th:text="${faculty.lastName}"></span><br>
+                    Email: <span th:text="${faculty.email}"></span><br>
+
+                    <a th:href="@{'/faculty/edit'+'?'+'id='+${faculty.id}}">
+                        <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
+                    </a>
+                    <a th:href="@{'/faculty/delete'+'?'+'id='+${faculty.id}}">
+                        <button class="btn btn-blue btn-rounded btn-fw">Remove</button>
+                    </a>
+                    <a th:href="@{'/faculty/details'+'?'+'id='+${faculty.id}}">
+                        <button class="btn btn-blue btn-rounded btn-fw">Details</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

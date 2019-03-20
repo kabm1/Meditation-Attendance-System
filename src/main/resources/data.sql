@@ -88,11 +88,11 @@ INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(105,'Renuka','Mohanraj
 INSERT INTO FACULTY(id,first_name,last_name,email) VALUES(106,'Andualem','Hailu','aabebe@mum.edu');
 
 
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (101,'Web Application Architecture','CS-543','WAA','Spring framework');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (102,'Modern Web Application','CS-525','MWA','Angular Framework');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (103,'Web Application Programing','CS-578','WAP','HTML CSS JQUERY');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (104,'Modern Programming Practice','CS-443','MPP','Java 8 ');
-INSERT INTO COURSE(id,name,course_id,short_name,desciption) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (101,'Web Application Architecture','CS-543','WAA','Spring framework');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (102,'Modern Web Application','CS-525','MWA','Angular Framework');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (103,'Web Application Programing','CS-578','WAP','HTML CSS JQUERY');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (104,'Modern Programming Practice','CS-443','MPP','Java 8 ');
+INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (105,'Machine Learning','CS-543','ML','Machine learning');
 
 
 

@@ -14,6 +14,4 @@ public class Faculty extends Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Transient
-    private MultipartFile profilePicture;
 }
