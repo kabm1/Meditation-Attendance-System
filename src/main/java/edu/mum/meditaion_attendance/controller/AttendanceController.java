@@ -4,6 +4,7 @@ import edu.mum.meditaion_attendance.domain.Duration;
 import edu.mum.meditaion_attendance.domain.Faculty;
 import edu.mum.meditaion_attendance.domain.Section;
 import edu.mum.meditaion_attendance.domain.Student;
+import edu.mum.meditaion_attendance.models.CumulativeAttendance;
 import edu.mum.meditaion_attendance.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,7 @@ public class AttendanceController {
     public String studentAttendance(Model model){
         Faculty faculty= facultyService.findById(101L);
         model.addAttribute("durations",sectionService.blockTeachByProfessors(faculty));
-        return "attendance/studentAttendance";
+        return "attendance/studentAttendanceForProfessor";
     }
 
     @PostMapping("getStudents")
@@ -72,8 +73,26 @@ public class AttendanceController {
     public String viewStudentAttendance(Model model){
         Faculty faculty= facultyService.findById(101L);
         model.addAttribute("durations",sectionService.blockTeachByProfessors(faculty));
-        return "attendance/studentAttendance";
+        return "attendance/studentAttendanceForProfessor";
     }
 
+    @GetMapping("cumulativeAttendance")
+    public String viewCumulative(Model model){
+        Student student = studentService.findById(101L);
+        CumulativeAttendance cumulativeAttendance= attendanceService.getStudentCumulative(student);
+        model.addAttribute("cumulative",cumulativeAttendance);
+        model.addAttribute("durations", cumulativeAttendance.getDurations());
+        return "attendance/studentAttendance";
+
+
+    }
+
+    @PostMapping("viewAttendance")
+    public String viewStudent(@RequestParam("duration") Long duration, RedirectAttributes redirect){
+        Student student = studentService.findById(101L);
+        Duration duration1=durationService.findById(duration);
+            redirect.addFlashAttribute("attendance",  attendanceService.getBlockAttendance(student, duration1));
+        return "redirect:/attendance/cumulativeAttendance";
+    }
 
 }
