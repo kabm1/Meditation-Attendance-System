@@ -16,8 +16,6 @@ public class CourseServiceImpl implements CourseService {
     @Autowired
     public CourseRepository courseRepository ;
 
-
-
     @Override
     public List<Course> findAll(){
         return (List<Course>) courseRepository.findAll();
@@ -34,6 +32,8 @@ public class CourseServiceImpl implements CourseService {
         return  courseRepository.save(course);
     }
 
-
-
+    @Override
+    public void delete(Long id) {
+        courseRepository.deleteById(id);
+    }
 }
