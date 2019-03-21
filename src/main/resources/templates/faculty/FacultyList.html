@@ -37,13 +37,13 @@
                             <td th:text="${faculty.email}">Student Email</td>
                             <td>
                                 <a th:href="@{'/faculty/edit'+'?'+'id='+${faculty.id}}">
-                                    <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
+                                    <i class="fa fa-edit"></i>
                                 </a>
                                 <a th:href="@{'/faculty/delete'+'?'+'id='+${faculty.id}}">
-                                    <button class="btn btn-blue btn-rounded btn-fw">Remove</button>
+                                    <i class="fas fa-trash-alt"></i>
                                 </a>
                                 <a th:href="@{'/faculty/details'+'?'+'id='+${faculty.id}}">
-                                    <button class="btn btn-blue btn-rounded btn-fw">Details</button>
+                                    <i class="fa fa-eye"></i>
                                 </a>
                             </td>
                         </tr>
