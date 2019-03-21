@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='View Student Attndance')"></head>
+<body th:include="layout::bodyFrag(pageBody='View Student Attndance')">
+<div th:fragment="content">
+    <div class=" grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">See Student Attendance </h4>
+                <form class="forms-sample" th:action="@{/attendance/getByEntry}"  method="post" >
+                    <div class="form-group" >
+                        <label
+                                for="duration"><span th:text="#{event.form.entry}">Entry</span></label>
+                        <select id="duration" name="entry" class="form-control" required="required" >
+                            <option value="">Select Entry</option>
+                            <option th:each="entry: ${entries}"
+                                    th:value="${entry.key}"
+                                    th:text="${entry.key}">
+
+                            </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2" th:value="#{form.button.view}">View</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div th:if="${attendances !=null}">
+        <div th:replace="attendance/fragments/attendanceByEntry :: attendanceByEntry"></div>
+    </div>
+</div>
+</body>
+<div layout:fragment="footer-script">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+
+        $('#duration').change(function () {
+            console.log("this is a change function");
+            console.log(contextRoot);
+
+            let block=$('#duration').val();
+            console.log("this is duration value "+ block);
+            let data = { 'block': block };
+            console.log(data);
+
+            $.ajax({
+                type:'POST',
+                url:'/attendance/getStudents?block='+block,
+                dataType:'json',
+                success: function (data) {
+                    let student=$('#student');
+                    student.empty();
+                    student.append('<option value="">Select a student</option>>');
+                    student.append('<option value="0">ALL</option>>');
+                    $.each(data,function (i,stu) {
+                        student.append('<option value="'+stu.id+'">'+ stu.firstName+' '+ stu.lastName +'</option>');
+                    })
+                }
+
+            });
+
+
+        });
+
+
+        /*]]>*/
+    </script>
+</div>
+</html>

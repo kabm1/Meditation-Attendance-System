@@ -11,6 +11,8 @@ import edu.mum.meditaion_attendance.util.ManualDataValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -67,6 +69,13 @@ public class AttendanceServiceImpl implements AttendanceService {
         attendance.setDurations(durations);
         attendance.setAttendedPercent(percentage);
         return attendance;
+    }
+
+    @Override
+    public List<CumulativeAttendance> getByEntry(List<Student> students) {
+        final List<CumulativeAttendance> cumulativeAttendances= new ArrayList<>();
+        students.forEach(student -> cumulativeAttendances.add(getStudentCumulative(student)));
+        return cumulativeAttendances ;
     }
 
     private BlockAttendance getSingleStudentAttendance(Event event, Student student){

@@ -55,7 +55,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findStudentsByEntry(LocalDate entry) {
-        return (List<Student>) studentRepository.findAllByEntry(entry);
+        return studentRepository.findByEntry(entry);
     }
 
     @Override
@@ -85,5 +85,8 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.deleteByStudentId(studentId);
     }
 
-
+    @Override
+    public List<Student> findByEntry(LocalDate localDate) {
+        return studentRepository.findStudentByEntryAfter(localDate);
+    }
 }
