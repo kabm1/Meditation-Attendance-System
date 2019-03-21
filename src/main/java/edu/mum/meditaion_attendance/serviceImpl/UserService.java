@@ -28,10 +28,9 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    public User findUserByUserName(String userName) {
-        return userRepository.findByUsername(userName);
+    public User findUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
-
     public User saveUser(User user) {
        // user.setPassword((user.getPassword()));
        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));

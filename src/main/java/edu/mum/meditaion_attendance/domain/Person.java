@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -15,6 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @MappedSuperclass
 public class Person implements Serializable {
+
 
     @NotEmpty
     @NotBlank
@@ -29,11 +30,20 @@ public class Person implements Serializable {
     @NotNull
     private String email;
 
+
+
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+
+    public String getName(){
+        return firstName +" "+ lastName;
     }
 }

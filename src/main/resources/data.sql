@@ -96,10 +96,10 @@ INSERT INTO COURSE(id,name,course_id,short_name,description) VALUES (105,'Machin
 
 INSERT INTO ROLE(role_id,role) VALUES (101,'ADMIN');
 INSERT INTO ROLE(role_id,role) VALUES (102,'STUDENT');
-INSERT INTO ROLE(role_id,role) VALUES (103,'FACUTLY');
-INSERT INTO USER (user_id,username,password,active) VALUES (101,'kabinad','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1,);
-INSERT INTO USER (user_id,username,password,active) VALUES (102,'andy','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1,);
-INSERT INTO USER (user_id,username,password,active) VALUES (103,'mike','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1,);
+INSERT INTO ROLE(role_id,role) VALUES (103,'FACULTY');
+INSERT INTO USER (user_id,email,password,active) VALUES (101,'asaad@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
+INSERT INTO USER (user_id,email,password,active) VALUES (102,'mberhanu@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
+INSERT INTO USER (user_id,email,password,active) VALUES (103,'blester@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
 INSERt INTO USER_ROLE(user_id,role_id) VALUES (101,101);
 INSERt INTO USER_ROLE(user_id,role_id) VALUES (102,102);
 INSERt INTO USER_ROLE(user_id,role_id) VALUES (103,103);
