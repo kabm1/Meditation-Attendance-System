@@ -46,12 +46,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     protected void configure(HttpSecurity http) throws Exception {
   http.
       authorizeRequests()
-              .antMatchers("/").permitAll()
+              //.antMatchers("/").permitAll()
               .antMatchers("/login").permitAll()
               .antMatchers("/registration").permitAll()
               .antMatchers("/h2-console/**").permitAll()
               .antMatchers("/h2").permitAll()
-              .antMatchers("/dashboard/**").hasAuthority("ADMIN").anyRequest()
+              .antMatchers("/home/**").hasAuthority("ADMIN").anyRequest()
               //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
               .authenticated().and().csrf().disable().formLogin()
               .loginPage("/login").failureUrl("/login?error=true")
@@ -61,7 +61,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .and().logout()
               .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
               .logoutSuccessUrl("/").and().exceptionHandling()
-              .accessDeniedPage("/access-denied");
+              .accessDeniedPage("/access-denied")
+              .and().rememberMe().key("uniquesAndSecret");
 
       http.headers().frameOptions().disable();
     }
@@ -70,7 +71,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     public void configure(WebSecurity web) throws Exception {
       web
               .ignoring()
-              .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**","/h2-console/**");
+              .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**","/h2-console/**","/json/**");
     }
 
   }

@@ -4,6 +4,9 @@ import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -13,16 +16,30 @@ public class Location  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @NotBlank
     private String name;
 
-    @Column(name = "short_name")
     @NotBlank
+    @Column(name = "short_name")
     private String shortName;
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "name='" + name + '\'' +
+                ", shortName='" + shortName + '\'' +
+                ", description='" + description + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
+
     @NotBlank
     private String description;
-    @NotBlank
-    private Long capacity;
+
+
+    @NotNull(message = "Please enter capacity size")
+    private Long  capacity;
 
      public Location(){
      }
@@ -51,7 +68,7 @@ public class Location  implements Serializable {
         this.description = description;
     }
 
-    public Long getCapacity() {
+    public Long  getCapacity() {
         return capacity;
     }
 
