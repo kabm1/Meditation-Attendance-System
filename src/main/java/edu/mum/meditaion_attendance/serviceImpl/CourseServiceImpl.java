@@ -8,6 +8,8 @@ import edu.mum.meditaion_attendance.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CourseServiceImpl implements CourseService {
 
@@ -17,8 +19,8 @@ public class CourseServiceImpl implements CourseService {
 
 
     @Override
-    public Iterable<Course> findAll(){
-        return courseRepository.findAll();
+    public List<Course> findAll(){
+        return (List<Course>) courseRepository.findAll();
     }
 
     @Override

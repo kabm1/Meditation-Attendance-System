@@ -47,6 +47,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
   http.
       authorizeRequests()
               //.antMatchers("/").permitAll()
+              .antMatchers("/**").permitAll()
               .antMatchers("/login").permitAll()
               .antMatchers("/registration").permitAll()
               .antMatchers("/h2-console/**").permitAll()

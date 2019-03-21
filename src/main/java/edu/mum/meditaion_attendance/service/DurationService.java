@@ -14,4 +14,5 @@ public interface DurationService {
     Duration findById(Long id);
     List<Duration> findByYear(int year);
     Duration findByDate(LocalDate localDate);
+    List<Duration> isAfter(LocalDate localDate);
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='Section Details')"></head>
+<body th:include="layout::bodyFrag(pageBody='Section Details')">
+<div th:fragment="content">
+    <div class="row">
+        <div class="col-md-5 d-flex align-items-stretch stretch-card grid-margin ">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Section Details</h4>
+                        <div class="card-body" style="">
+                            <img th:src="@{'/images/'+'mum-logo2'+'.jpg'}" alt="Image"
+                                 style=" max-width: 100%;max-height: 100%;">
+                        </div>
+                        <br>
+                        Professor: <strong
+                            th:text="${section.professor.lastName} +' '+${section.professor.lastName}"></strong><br>
+                        Course: <strong th:text="${section.course.name}"></strong><br>
+                        Course Code: <strong th:text="${section.course.courseId}"></strong><br>
+                        Duration: <strong
+                            th:text="${section.duration.startDate} +' to '+ ${section.duration.startDate}"></strong><br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-7 grid-margin stretch-card ">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Enrolled Students</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>Student ID</td>
+                                <td>Email</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="student:${section.students}">
+                                <td th:text="${student.firstName}+'  '+${student.lastName}"></td>
+                                <td th:text="${student.studentId}"></td>
+                                <td th:text="${student.email}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

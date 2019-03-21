@@ -1,10 +1,13 @@
 package edu.mum.meditaion_attendance.domain;
 
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.Duration;
 
+@ToString
 @Entity
 @Table(name = "course")
 public class Course {
