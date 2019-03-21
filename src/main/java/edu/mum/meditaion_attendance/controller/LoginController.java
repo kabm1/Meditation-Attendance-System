@@ -25,9 +25,11 @@ public class LoginController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @RequestMapping(value={"/login"}, method = RequestMethod.GET)
-    public String login(@ModelAttribute User user){
-        return "login";
+    @RequestMapping(value= "/login", method = RequestMethod.GET)
+    public ModelAndView login(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("login");
+        return modelAndView;
     }
     @RequestMapping(value="/registration", method = RequestMethod.GET)
     public ModelAndView registration(){
@@ -40,7 +42,7 @@ public class LoginController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
-        User userExists = userService.findUserByUserName(user.getUsername());
+        User userExists = userService.findUserByEmail(user.getEmail());
         if (userExists != null) {
             bindingResult
                     .rejectValue("username", "error.user",

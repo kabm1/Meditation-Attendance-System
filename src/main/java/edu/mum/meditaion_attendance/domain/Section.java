@@ -2,11 +2,13 @@ package edu.mum.meditaion_attendance.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-
+@Data
+@ToString
 @Entity
 public class Section implements Serializable {
 
@@ -26,7 +28,7 @@ public class Section implements Serializable {
     @JoinColumn(name = "duration")
     private Duration duration;
 
-    @OneToMany
+    @ManyToMany
     @JoinTable(name = "student_in_section")
     private List<Student> students;
 

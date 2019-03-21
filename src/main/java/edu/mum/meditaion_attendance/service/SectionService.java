@@ -9,4 +9,7 @@ import java.util.List;
 public interface SectionService {
     Section findByFacultyAndDuration(Faculty faculty, Duration duration);
     List<Duration> blockTeachByProfessors(Faculty professor);
+    Section save(Section section);
+    List<Section> findAll();
+    Section findById(Long id);
 }
