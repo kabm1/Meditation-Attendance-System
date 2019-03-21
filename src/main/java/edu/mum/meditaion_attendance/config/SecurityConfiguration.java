@@ -18,7 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
   @Configuration
   @EnableWebSecurity
-  @EnableGlobalMethodSecurity(prePostEnabled=true)
+  @EnableGlobalMethodSecurity(prePostEnabled=true,securedEnabled = true,jsr250Enabled = true)
   public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -54,7 +54,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .antMatchers("/registration").permitAll()
               .antMatchers("/h2-console/**").permitAll()
               .antMatchers("/h2").permitAll()
-              .antMatchers("/attendance/**").hasAnyAuthority("FACULTY","STUDENT")
+              .antMatchers("/location/**").hasAuthority("ADMIN")
               //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
               .anyRequest().authenticated().and().csrf().disable().formLogin()
               .loginPage("/login").failureUrl("/login?error=true")

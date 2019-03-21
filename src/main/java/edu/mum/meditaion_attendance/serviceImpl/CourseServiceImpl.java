@@ -6,15 +6,20 @@ import edu.mum.meditaion_attendance.domain.Location;
 import edu.mum.meditaion_attendance.repository.CourseRepository;
 import edu.mum.meditaion_attendance.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @Service
+
 public class CourseServiceImpl implements CourseService {
 
     @Autowired
     public CourseRepository courseRepository ;
+
 
     @Override
     public List<Course> findAll(){
