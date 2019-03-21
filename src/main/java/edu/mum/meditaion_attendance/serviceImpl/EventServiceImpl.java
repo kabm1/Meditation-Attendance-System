@@ -7,11 +7,13 @@ import edu.mum.meditaion_attendance.domain.Location;
 import edu.mum.meditaion_attendance.repository.EventRepository;
 import edu.mum.meditaion_attendance.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@PreAuthorize("hasRole('ADMIN')")
 public class EventServiceImpl implements EventService {
 
     @Autowired
@@ -32,6 +34,7 @@ public class EventServiceImpl implements EventService {
     eventRepository.deleteById(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Override
     public List<Event> findAll() {
         return (List<Event>) eventRepository.findAll();
