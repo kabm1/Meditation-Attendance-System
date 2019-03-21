@@ -27,24 +27,24 @@ public class CourseController {
         public String courseList( Model model) {
             List<Course> course = courseService.findAll();
             model.addAttribute("course", course);
-            return "courseDetail";
+            return "course/courseDetail";
         }
 
     @GetMapping("/course/add")
     public String getForm(@ModelAttribute("course") Course course, Model model){
-        return "CourseForm";
+        return "course/CourseForm";
     }
 
     @PostMapping("/course/add")
     public String saveCourse(@Valid @ModelAttribute("course") Course course, BindingResult bindingResult,
                                   RedirectAttributes redirectAttedributes){
         if(bindingResult.hasErrors()){
-            return "CourseForm";
+            return "course/CourseForm";
              }
 
          Course cor= courseService.save(course);
         redirectAttedributes.addFlashAttribute("course", cor);
-        return "redirect:/course/details";
+        return "redirect:/course/course/details";
          }
 
 
@@ -55,14 +55,14 @@ public class CourseController {
         List<Course> course = courseService.findAll();
         model.addAttribute("course", course);
 
-        return "courseDetail";
+        return "course/courseDetail";
     }
 
     @GetMapping("/course/edit")
     public String edit(@RequestParam Long id, Model model){
         Course course=courseService.findById(id);
         model.addAttribute("course",course);
-        return "courseEditForm";
+        return "course/courseEditForm";
     }
 
     @GetMapping("/course/delete")
@@ -74,7 +74,7 @@ public class CourseController {
                 e.printStackTrace();
                 redirect.addFlashAttribute("errorMessage","{course.delete.error}");
             }
-        return "redirect:/course/list";
+        return "redirect:/course/course/list";
     }
 
 }

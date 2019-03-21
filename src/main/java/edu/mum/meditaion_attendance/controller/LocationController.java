@@ -25,24 +25,24 @@ public class LocationController {
     public String getLocation(Model model) {
         List <Location> location = locationServiceImpl.findAll();
         model.addAttribute("location", location);
-        return "LocationDetails";
+        return "locationdir/LocationDetails";
     }
 
      @GetMapping("/location/add")
       public String getForm(@ModelAttribute("location") Location location, Model model){
-          return "LocationForm";
+          return "locationdir/LocationForm";
       }
     @PostMapping("/location/add")
     public String saveLocation(@Valid @ModelAttribute("location") Location location,BindingResult bindingResult,
                                RedirectAttributes redirectAttedributes) {
         if (bindingResult.hasErrors()) {
-            return "LocationForm";
+            return "locationdir/LocationForm";
         }
 
         Location loc = locationServiceImpl.save(location);
         redirectAttedributes.addFlashAttribute("location", loc);
 
-        return "redirect:/location/details";
+        return "redirect:/location/location/details";
 
     }
 
@@ -52,7 +52,7 @@ public class LocationController {
            List <Location> location = locationServiceImpl.findAll();
            model.addAttribute("location", location);
 
-        return "LocationDetails";
+        return "locationdir/LocationDetails";
     }
 
     @GetMapping("location/delete")
@@ -66,7 +66,7 @@ public class LocationController {
             redirect.addFlashAttribute("errorMessage","location.delete.error");
         }
 
-        return "redirect:/location/details";
+        return "redirect:/location/location/details";
     }
 
 
@@ -74,7 +74,7 @@ public class LocationController {
     public String edit(@RequestParam Long id, Model model){
         Location location=locationServiceImpl.findById(id);
         model.addAttribute("location",location);
-        return "locationEditForm";
+        return "locationdir/locationEditForm";
     }
 
 
