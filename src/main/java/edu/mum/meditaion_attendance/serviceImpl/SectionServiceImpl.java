@@ -27,4 +27,19 @@ public class SectionServiceImpl implements SectionService {
         List<Section> sections= sectionRepository.findAllByProfessor(professor);
         return sections.stream().map(Section::getDuration).collect(Collectors.toList());
     }
+
+    @Override
+    public Section save(Section section) {
+        return sectionRepository.save(section);
+    }
+
+    @Override
+    public List<Section> findAll() {
+        return (List<Section>) sectionRepository.findAll();
+    }
+
+    @Override
+    public Section findById(Long id) {
+        return sectionRepository.findById(id).get();
+    }
 }

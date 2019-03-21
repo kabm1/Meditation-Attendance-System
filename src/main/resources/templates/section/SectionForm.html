@@ -2,92 +2,126 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       lang="en"
       layout:decorator="layout">
-
 <head th:include="layout::headerFrag(pageTitle='Add Section')"></head>
 <body th:include="layout::bodyFrag(pageBody='Add Section')">
 <div th:fragment="content">
-    <div class=" grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Add Section Form</h4>
-                <p class="card-description">
-                    Please fill the data........
-                </p>
-                <form class="forms-sample" th:action="@{/section/add}" method="post" th:object="${section}"
-                      enctype="multipart/form-data">
-                    <ul th:if="${#fields.hasErrors('*')}">
-                        <li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
-                    </ul>
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch stretch-card grid-margin ">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Section Form</h4>
+                        <form class="forms-sample" th:action="@{/section/add}" th:object="${section}" method="post">
+                            <div class="form-group">
+                                <label
+                                        for="faculty"><span th:text="#{section.form.course}">Course</span></label>
+                                <select id="course" th:field="*{course}" class="form-control">
+                                    <option value="">Select Course</option>
+                                    <option th:each="course: ${courses}"
+                                            th:value="${course.id}"
+                                            th:text="${course.name} + '  '+${course.shortName}">
 
-                    <div class="form-group">
-                        <label
-                                for="firstName"><span th:text="#{Student.form.firstName}"></span></label>
-                        <input type="text" th:field="*{firstName}" class="form-control" id="firstName"
-                               placeholder="First Name">
-                        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
-                           th:errorclass="fieldError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label
-                                for="lastName"><span th:text="#{Student.form.lastName}"></span></label>
-                        <input type="text" th:field="*{lastName}" class="form-control" id="lastName"
-                               placeholder="Last Name">
-                        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
-                           th:errorclass="fieldError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="email"><span th:text="#{Student.form.email}"></span> </label>
-                        <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Email">
-                        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
-                           th:errorclass="fieldError">Invalid
-                            ID</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="studentId"><span th:text="#{Student.form.studentId}"></span></label>
-                        <input type="text" th:field="*{studentId}" class="form-control" id="studentId"
-                               placeholder="Student ID">
-                        <p th:if="${#fields.hasErrors('studentId')}" th:errors="*{studentId}"
-                           th:errorclass="fieldError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="barCode"><span th:text="#{Student.form.barcode}"></span></label>
-                        <input type="text" th:field="*{barCode}" class="form-control" id="barCode"
-                               placeholder="barcode">
-                        <p th:if="${#fields.hasErrors('barCode')}" th:errors="*{barCode}"
-                           th:errorclass="fieldError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="barCode"><span th:text="#{Student.form.entry}"></span></label>
-                        <input type="text" th:field="*{entry}" class="form-control" id="entry"
-                               placeholder="Entry">
-                        <p th:if="${#fields.hasErrors('entry')}" th:errors="*{entry}"
-                           th:errorclass="fieldError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="barCode"><span th:text="#{Student.form.phone}"></span></label>
-                        <input type="text" th:field="*{phone}" class="form-control" id="phone"
-                               placeholder="***-***-****">
-                        <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
-                           th:errorclass="fieldError"></p>
-                    </div>
-                    <div class="form-group">
-                        <label><span th:text="#{Student.form.profilePicture}"></span></label>
-                        <div class="input-group col-xs-12">
-                            <input type="file" th:field="*{profilePicture}"
-                                   class="form-control file-upload-info file-upload-browse btn btn-info"
-                                   placeholder="Upload Image"/>
-                            <p th:if="${#fields.hasErrors('profilePicture')}" th:errors="*{profilePicture}"
-                               th:errorclass="fieldError"></p>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label
+                                        for="faculty"><span th:text="#{section.form.faculty}">Faculty</span></label>
+                                <select id="faculty" th:field="*{professor}" class="form-control">
+                                    <option value="">Select Faculty</option>
+                                    <option th:each="professor: ${faculties}"
+                                            th:value="${professor.id}"
+                                            th:text="${professor.firstName} + '  '+${professor.lastName}">
 
-                        </div>
-                    </div>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label
+                                        for="duration"><span th:text="#{section.form.duration}">Duration</span></label>
+                                <select id="duration" th:field="*{duration}" class="form-control">
+                                    <option value="">Select Duration</option>
+                                    <option th:each="duration: ${durations}"
+                                            th:value="${duration.id}"
+                                            th:text="${duration.name}">
 
-                    <button type="submit" class="btn btn-success mr-2" th:text="#{Student.form.button.add}"></button>
-                    <button type="reset" class="btn btn-success mr-2" th:text="#{Student.form.button.reset}"></button>
-                </form>
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="studentInput"><span th:text="#{section.form.student}">Student</span></label>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <input class="form-control " type="text" placeholder="search" id="search">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="button" class="btn btn-primary mr-2 " id="addStudent"
+                                               value="Add Student"/>
+                                    </div>
+                              </div>
+                                <div id="error" style="display: none">
+                                    <h2 style="color: red">Student with the given Id DOES NOT EXIST!!!</h2>
+
+                                </div>
+                             <select style="display: none" id="studentInput" class="form-control"
+                                        th:field="*{students}"
+                                        multiple>
+
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success mr-2" th:value="#{section.form.button.add}">ADD
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6 grid-margin stretch-card ">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Selected Students</h4>
+                    <ol id="studentSelected">
+
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 </body>
+<div layout:fragment="footer-script">
+    <script th:inline="javascript">
+
+        $('#addStudent').click(function () {
+            console.log("this is a change function");
+            console.log(contextRoot);
+
+            let block = $('#search').val();
+            console.log("this is duration value " + block);
+            let data = {'block': block};
+            console.log(data);
+            let student = $('#studentSelected');
+            let inputData = $('#studentInput');
+
+
+            $.ajax({
+                type: 'POST',
+                url: '/section/getStudent?id=' + block,
+                dataType: 'json',
+                success: function (data) {
+                    $('#error').hide();
+                    student.append('<li>' + data.firstName + ' ' + data.lastName + '</li>');
+                    inputData.append('<option value="' + data.id + '"selected>' + 'data.firstName' + ' ' + 'data.lastName' + '</option>');
+                },
+                error:function () {
+                    $('#error').show();
+                }
+            });
+        });
+    </script>
+</div>
 </html>

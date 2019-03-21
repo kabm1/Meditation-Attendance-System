@@ -2,44 +2,59 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       lang="en"
       layout:decorator="layout">
-<head th:include="layout::headerFrag(pageTitle='Student Details')"></head>
-<body th:include="layout::bodyFrag(pageBody='Student Details')">
+<head th:include="layout::headerFrag(pageTitle='Section Details')"></head>
+<body th:include="layout::bodyFrag(pageBody='Section Details')">
 <div th:fragment="content">
-    <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-            <a th:href="@{/student/add}" href="#">
-                <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Student</button>
-            </a>
-            <div class="card-body">
-                <h4 class="card-title">Student Successfully Added!!! </h4>
-                <p class="card-description">
-                    <code></code>
-                </p>
-
-                <div class="table-responsive">
-                    <div>
-                        <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
+    <div class="row">
+        <div class="col-md-5 d-flex align-items-stretch stretch-card grid-margin ">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Section Details</h4>
+                        <div class="card-body" style="">
+                            <img th:src="@{'/images/'+'mum-logo2'+'.jpg'}" alt="Image"
+                                 style=" max-width: 100%;max-height: 100%;">
+                        </div>
+                        <br>
+                        Professor: <strong
+                            th:text="${section.professor.lastName} +' '+${section.professor.lastName}"></strong><br>
+                        Course: <strong th:text="${section.course.name}"></strong><br>
+                        Course Code: <strong th:text="${section.course.courseId}"></strong><br>
+                        Duration: <strong
+                            th:text="${section.duration.startDate} +' to '+ ${section.duration.startDate}"></strong><br>
                     </div>
-                    First Name: <span th:text="${student.firstName}"></span><br>
-                    Last Name: <span th:text="${student.lastName}"></span><br>
-                    Student ID: <span th:text="${student.studentId}"></span><br>
-                    Email: <span th:text="${student.email}"></span><br>
-                    Entry: <span th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}"></span><br>
+                </div>
+            </div>
 
-                    <a th:href="@{'/student/edit'+'?'+'id='+${student.id}}">
-                        <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
-                    </a>
-                    <a th:href="@{'/student/delete'+'?'+'id='+${student.id}}">
-                        <button class="btn btn-blue btn-rounded btn-fw">Remove</button>
-                    </a>
-                    <a th:href="@{'/student/details'+'?'+'id='+${student.id}}">
-                        <button class="btn btn-blue btn-rounded btn-fw">Details</button>
-                    </a>
+        </div>
+        <div class="col-md-7 grid-margin stretch-card ">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Enrolled Students</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>Student ID</td>
+                                <td>Email</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="student:${section.students}">
+                                <td th:text="${student.firstName}+'  '+${student.lastName}"></td>
+                                <td th:text="${student.studentId}"></td>
+                                <td th:text="${student.email}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>

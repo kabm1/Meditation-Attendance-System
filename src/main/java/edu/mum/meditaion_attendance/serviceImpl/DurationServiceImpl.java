@@ -52,4 +52,9 @@ public class DurationServiceImpl implements DurationService {
         }).findFirst().orElse(null);
         return duration;
     }
+
+    @Override
+    public List<Duration> isAfter(LocalDate localDate) {
+        return durationRepo.findAllByStartDateAfter(localDate);
+    }
 }
