@@ -11,7 +11,7 @@
                 <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Student</button>
             </a>
             <div class="card-body">
-                <h4 class="card-title">Student Successfully Added!!! </h4>
+                <h4 class="card-title">Student Details </h4>
                 <p class="card-description">
                     <code></code>
                 </p>
@@ -20,9 +20,9 @@
                     <div>
                         <img th:src="@{'/images/'+${student.studentId}+'.png'}" alt="Image">
                     </div>
-                    First Name: <span th:text="${student.firstName}"></span><br>
-                    Last Name: <span th:text="${student.lastName}"></span><br>
-                    Student ID: <span th:text="${student.studentId}"></span><br>
+                    First Name: <strong th:text="${student.firstName}"></strong><br>
+                    Last Name: <strong th:text="${student.lastName}"></strong><br>
+                    Student ID: <strong th:text="${student.studentId}"></strong><br>
                     Email: <span th:text="${student.email}"></span><br>
                     Entry: <span th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}"></span><br>
 

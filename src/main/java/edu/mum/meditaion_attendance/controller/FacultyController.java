@@ -33,8 +33,14 @@ public class FacultyController {
         if(result.hasErrors()){
             return "faculty/FacultyForm";
         }
-        Faculty faculty1=facultyService.save(faculty);
-        redirectAttributes.addFlashAttribute("faculty",faculty1);
+        try{
+            Faculty faculty1=facultyService.save(faculty);
+            redirectAttributes.addFlashAttribute("faculty",faculty1);
+            redirectAttributes.addFlashAttribute("successMessage","form.save.success");
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("errorMessage","form.save.error");
+        }
+
         return "redirect:/faculty/facultyDetails";
     }
     @GetMapping("/facultyDetails")

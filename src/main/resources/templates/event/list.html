@@ -35,7 +35,7 @@
                             <td th:text="${event.location==null ? '': event.location.name}"></td>
                             <td>
                                 <a th:href="@{'/event/edit/'+ ${event.id}}"><i class="fa fa-edit"></i></a>
-                                <a th:href="@{'/event/delete/'+ ${event.id}}"><i class="fa fa-edit"></i></a>
+                                <a th:href="@{'/event/delete/'+ ${event.id}}"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         </tbody>

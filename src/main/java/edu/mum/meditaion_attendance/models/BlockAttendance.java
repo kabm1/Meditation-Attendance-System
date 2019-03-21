@@ -1,7 +1,12 @@
 package edu.mum.meditaion_attendance.models;
 
+import edu.mum.meditaion_attendance.domain.Duration;
+import edu.mum.meditaion_attendance.domain.Student;
+
 public class BlockAttendance {
 
+    private Student student;
+    private Duration duration;
     private Integer sessionsInBlock;
     private Integer daysPresent;
     private Double percentageAttended;
@@ -37,5 +42,21 @@ public class BlockAttendance {
 
     public void setExtraCreditPoints(Double extraCreditPoints) {
         this.extraCreditPoints = extraCreditPoints;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
     }
 }

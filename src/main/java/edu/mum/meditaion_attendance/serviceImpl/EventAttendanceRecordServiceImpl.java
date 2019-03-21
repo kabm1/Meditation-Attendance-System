@@ -73,6 +73,11 @@ public class EventAttendanceRecordServiceImpl implements EventAttendanceRecordSe
     }
 
     @Override
+    public List<EventAttendanceRecord> findByStudent(Student student) {
+        return eventAttendanceRecordRepository.findAllByStudent(student);
+    }
+
+    @Override
     public List<EventAttendanceRecord> saveAutomaticRecords(MultipartFile file) {
           List<EventAttendanceRecord> records= new ArrayList<>();
         try {

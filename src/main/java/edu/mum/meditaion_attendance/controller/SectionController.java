@@ -60,9 +60,15 @@ public class SectionController {
         if (result.hasErrors()) {
             return "section/SectionForm";
         }
+        try {
+            Section section1 = sectionService.save(section);
+            redirectAttributes.addFlashAttribute("section", section);
+            redirectAttributes.addFlashAttribute("successMessage","form.save.success");
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("errorMessage","form.save.error");
+        }
         System.out.println(section.toString());
-        Section section1 = sectionService.save(section);
-        redirectAttributes.addFlashAttribute("section", section);
+
         return "redirect:/section/sectionDetails";
     }
 

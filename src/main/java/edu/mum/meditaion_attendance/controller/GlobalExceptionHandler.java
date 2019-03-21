@@ -14,7 +14,7 @@ import java.io.IOException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    private static final Logger logger= LoggerFactory.getLogger(GlobalExceptionHandler.class);
+   /* private static final Logger logger= LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND , reason = "IOException occured")
     @ExceptionHandler(IOException.class)
@@ -25,5 +25,5 @@ public class GlobalExceptionHandler {
         logger.error("Page not found ");
         modelAndView.setViewName("errorPages/error-404");
         return modelAndView;
-    }
+    }*/
 }
