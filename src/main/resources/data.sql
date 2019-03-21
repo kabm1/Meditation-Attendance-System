@@ -100,9 +100,11 @@ INSERT INTO ROLE(role_id,role) VALUES (103,'FACULTY');
 INSERT INTO USER (user_id,email,password,active) VALUES (101,'asaad@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
 INSERT INTO USER (user_id,email,password,active) VALUES (102,'mberhanu@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
 INSERT INTO USER (user_id,email,password,active) VALUES (103,'blester@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
+INSERT INTO USER (user_id,email,password,active) VALUES (104,'cruby@mum.edu','$2a$10$kxrclT1555lm3mt0hgY0SODvWs2cEioC1pz9ZHvTl9nVJfTvzrXc6',1);
 INSERt INTO USER_ROLE(user_id,role_id) VALUES (101,101);
 INSERt INTO USER_ROLE(user_id,role_id) VALUES (102,102);
 INSERt INTO USER_ROLE(user_id,role_id) VALUES (103,103);
+INSERt INTO USER_ROLE(user_id,role_id) VALUES (104,103);
 
 
 INSERT INTO SECTION (id,professor,course,duration) VALUES (101,101,102,101);

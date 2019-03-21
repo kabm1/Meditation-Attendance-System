@@ -26,7 +26,7 @@ public class LoginService {
     StudentService studentService;
 
 
-    public Long getCurrentUserID(Authentication auth) {
+    public Object getCurrentUserID(Authentication auth) {
         String email = auth.getName();
         System.out.println("login"+ email);
         User user = userService.findUserByEmail(email);
@@ -38,12 +38,12 @@ public class LoginService {
         if (rolesString.contains(Roles.FACULTY.name())) {
             Faculty faculty = facultyService.findByEmail(email);
             if (faculty != null) {
-                return faculty.getId();
+                return faculty;
             }
             if (rolesString.contains(Roles.STUDENT.name())) {
                 Student student = studentService.findStudentByEmail(email);
                 if (student != null) {
-                    return student.getId();
+                    return student;
                 }
             }
 

@@ -1,5 +1,8 @@
 package edu.mum.meditaion_attendance.controller;
 
+import edu.mum.meditaion_attendance.domain.Faculty;
+import edu.mum.meditaion_attendance.domain.Person;
+import edu.mum.meditaion_attendance.domain.Student;
 import edu.mum.meditaion_attendance.domain.User;
 import edu.mum.meditaion_attendance.serviceImpl.LoginService;
 import edu.mum.meditaion_attendance.serviceImpl.UserService;
@@ -14,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@SessionAttributes(value = {"userId"})
+@SessionAttributes("person")
 public class HomeController {
 
 
@@ -26,9 +29,15 @@ public class HomeController {
     @GetMapping(value={"/home"})
     public String home(Model model, Authentication auth){
       String email = auth.getName();
-      Long id = loginService.getCurrentUserID(auth);
-      System.out.println(id);
-      model.addAttribute("username", email);
+      Object person =(Person)loginService.getCurrentUserID(auth);
+      model.addAttribute("person", person);
+
+
         return "index";
+    }
+
+    @GetMapping(value={"/access-denied"})
+    public String denied(){
+        return "access-denied";
     }
 }

@@ -46,13 +46,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     protected void configure(HttpSecurity http) throws Exception {
   http.
       authorizeRequests()
-              //.antMatchers("/").permitAll()
-              //.antMatchers("/**").permitAll()
+              .antMatchers("/").permitAll()
+              .antMatchers("/logout").permitAll()
               .antMatchers("/login").permitAll()
               .antMatchers("/registration").permitAll()
               .antMatchers("/h2-console/**").permitAll()
               .antMatchers("/h2").permitAll()
-              //.antMatchers("/home/**").hasAuthority("ADMIN").anyRequest()
+              .antMatchers("/event/**").hasAuthority("ADMIN")
               //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
               .anyRequest().authenticated().and().csrf().disable().formLogin()
               .loginPage("/login").failureUrl("/login?error=true")
