@@ -11,11 +11,10 @@
                 <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Faculty</button>
             </a>
             <div class="card-body">
-                <h4 class="card-title">Faculty Added Successfully!!!  </h4>
+                <h4 class="card-title">Faculty Details Successfully </h4>
                 <p class="card-description">
                     <code></code>
                 </p>
-
                 <div class="table-responsive">
                     <div>
                         <img th:src="@{'/images/'+'mum-logo2'+'.jpg'}" alt="Image">
@@ -25,15 +24,11 @@
                     Email: <span th:text="${faculty.email}"></span><br>
 
                     <a th:href="@{'/faculty/edit'+'?'+'id='+${faculty.id}}">
-                        <button class="btn btn-blue btn-rounded btn-fw">Edit</button>
+                        <i class="fa fa-edit"></i>
                     </a>
                     <a th:href="@{'/faculty/delete'+'?'+'id='+${faculty.id}}">
-                        <button class="btn btn-blue btn-rounded btn-fw">Remove</button>
+                        <i class="fas fa-trash-alt"></i>
                     </a>
-                    <a th:href="@{'/faculty/details'+'?'+'id='+${faculty.id}}">
-                        <button class="btn btn-blue btn-rounded btn-fw">Details</button>
-                    </a>
-
                 </div>
             </div>
         </div>
