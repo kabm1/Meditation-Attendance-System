@@ -23,7 +23,7 @@ public class HomeController {
     @Autowired
     UserService userService;
 
-    @GetMapping(value={"/","/home"})
+    @GetMapping(value={"/home"})
     public String home(Model model, Authentication auth){
       String email = auth.getName();
       Long id = loginService.getCurrentUserID(auth);

@@ -61,7 +61,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .passwordParameter("password")
               .and().logout()
               .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-              .logoutSuccessUrl("/").deleteCookies("JSESSIONID").deleteCookies("remember-me").and().exceptionHandling()
+              .logoutSuccessUrl("/login").deleteCookies("JSESSIONID").deleteCookies("remember-me").and().exceptionHandling()
 
               .accessDeniedPage("/access-denied")
               .and().rememberMe().key("uniquesAndSecret");
