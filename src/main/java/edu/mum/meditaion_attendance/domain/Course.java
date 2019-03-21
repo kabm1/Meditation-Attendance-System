@@ -15,12 +15,16 @@ public class Course {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private  Long id;
+
     @NotBlank
     private String name;
+
     @NotBlank
     private String courseId;
+
     @NotBlank
     private String shortName;
+
     @NotBlank
      private String description ;
 

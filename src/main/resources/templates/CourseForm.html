@@ -16,43 +16,33 @@
 
                          <div class="form-group">
                               <label
-                                      for="CourseName"><span th:text="#{course.form.CourseName}"> Course Name</span></label>
-                              <input type="text" th:field="*{CourseName}" class="form-control" id="CourseName" placeholder="CourseName">
-                              <p th:if="${#fields.hasErrors('CourseName')}" th:errors="*{CourseName}"
+                                      for="name"><span th:text="#{course.form.name}">Course Name</span></label>
+                              <input type="text" th:field="*{name}" class="form-control" id="CourseName" placeholder="name">
+                              <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
                                  th:errorclass="fieldError">Invalid
                                    ID</p>
                          </div>
                          <div class="form-group">
                               <label
                                       for="courseId"><span th:text="#{course.form.courseId}">Course ID</span></label>
-                              <input type="text" th:field="*{courseId}" class="form-control" id="shortName" placeholder="courseId">
+                              <input type="text" th:field="*{courseId}" class="form-control" id="courseId" placeholder="courseId">
                               <p th:if="${#fields.hasErrors('courseId')}" th:errors="*{courseId}"
                                  th:errorclass="fieldError">Invalid
                                    ID</p>
                          </div>
                          <div class="form-group">
-                              <label for="faculty"><span th:text="#{course.form.faculty}">Faculty</span> </label>
-                              <input type="faculty" th:field="*{faculty}" class="form-control" id="faculty" placeholder="faculty">
-                              <p th:if="${#fields.hasErrors('faculty')}" th:errors="*{faculty}"
+                              <label for="shortName"><span th:text="#{course.form.shortName}"> Short Name </span> </label>
+                              <input type="text" th:field="*{shortName}" class="form-control" id="shortName" placeholder="shortName">
+                              <p th:if="${#fields.hasErrors('shortName')}" th:errors="*{shortName}"
                                  th:errorclass="fieldError">Invalid
                                    ID</p>
                          </div>
                          <div class="form-group">
-                              <label for="duration"><span th:text="#{course.form.duration}">Duration</span></label>
-                              <input type="text" th:field="*{duration}" class="form-control" id="duration" placeholder="duration">
-                              <p th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}"
+                              <label for="description"><span th:text="#{course.form.description}">Description</span></label>
+                              <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="description">
+                              <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
                                  th:errorclass="fieldError">Invalid
                                     course duration</p>
-
-                              <div class="form-group">
-                                   <label for="student"><span th:text="#{course.form.student}">Student</span> </label>
-                                   <input type="student" th:field="*{student}" class="form-control" id="student" placeholder="student">
-                                   <p th:if="${#fields.hasErrors('student')}" th:errors="*{student}"
-                                      th:errorclass="fieldError">Invalid
-                                        ID</p>
-                              </div>
-
-
 
                               <button type="submit" class="btn btn-success mr-2" th:value="#{location.form.button.add}">Submit</button>
                               <button type="reset" class="btn btn-success mr-2" th:value="#{location.form.button.reset}">Rest</button>

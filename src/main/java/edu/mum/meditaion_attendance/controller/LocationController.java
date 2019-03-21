@@ -22,8 +22,10 @@ public class LocationController {
 
 
     @GetMapping("/location/list")
-    public String getLocation(@ModelAttribute("location") Location location, Model model) {
-        return "LocationForm";
+    public String getLocation(Model model) {
+        List <Location> location = locationServiceImpl.findAll();
+        model.addAttribute("location", location);
+        return "LocationDetails";
     }
 
      @GetMapping("/location/add")
@@ -39,7 +41,7 @@ public class LocationController {
 
         Location loc = locationServiceImpl.save(location);
         redirectAttedributes.addFlashAttribute("location", loc);
-        System.out.println(loc.toString());
+
         return "redirect:/location/details";
 
     }
