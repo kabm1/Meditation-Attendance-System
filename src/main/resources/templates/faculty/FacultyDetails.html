@@ -11,7 +11,7 @@
                 <button type="button" class="btn btn-inverse-primary btn-rounded ">Add Faculty</button>
             </a>
             <div class="card-body">
-                <h4 class="card-title">Faculty Details Successfully </h4>
+                <h4 class="card-title">Faculty Details </h4>
                 <p class="card-description">
                     <code></code>
                 </p>
@@ -19,9 +19,9 @@
                     <div>
                         <img th:src="@{'/images/'+'mum-logo2'+'.jpg'}" alt="Image">
                     </div>
-                    First Name: <span th:text="${faculty.firstName}"></span><br>
-                    Last Name: <span th:text="${faculty.lastName}"></span><br>
-                    Email: <span th:text="${faculty.email}"></span><br>
+                    First Name: <strong th:text="${faculty.firstName}"></strong><br>
+                    Last Name: <strong th:text="${faculty.lastName}"></strong><br>
+                    Email: <strong th:text="${faculty.email}"></strong><br>
 
                     <a th:href="@{'/faculty/edit'+'?'+'id='+${faculty.id}}">
                         <i class="fa fa-edit"></i>
