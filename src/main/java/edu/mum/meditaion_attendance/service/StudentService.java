@@ -21,6 +21,5 @@ public interface StudentService {
    void delete(Student student);
    void deleteById(Long id);
    void deleteByStudentId(String studentId);
-
-
+   List<Student>findByEntry(LocalDate localDate);
 }

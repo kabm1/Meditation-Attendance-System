@@ -27,7 +27,7 @@ public class Student extends Person {
     @NotBlank
     private String barCode;
     @DateTimeFormat(pattern = "MM-dd-yyyy")
-    private Date entry;
+    private LocalDate entry;
     @Transient
     private MultipartFile profilePicture;
 
@@ -61,11 +61,11 @@ public class Student extends Person {
         this.barCode = barCode;
     }
 
-    public Date getEntry() {
+    public LocalDate getEntry() {
         return entry;
     }
 
-    public void setEntry(Date entry) {
+    public void setEntry(LocalDate entry) {
         this.entry = entry;
     }
 

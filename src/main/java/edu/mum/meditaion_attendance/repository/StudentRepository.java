@@ -22,6 +22,10 @@ public interface StudentRepository extends CrudRepository<Student,Long> {
     @Query(value = "select * from student limit 10",nativeQuery = true)
     List<Student> getFirstTen();
 
+    List<Student> findStudentByEntryAfter(LocalDate l);
+
+    List<Student> findAllByEntryAfter(LocalDate localDate);
+
 
 
 }

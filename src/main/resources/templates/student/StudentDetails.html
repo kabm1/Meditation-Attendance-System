@@ -24,7 +24,7 @@
                     Last Name: <strong th:text="${student.lastName}"></strong><br>
                     Student ID: <strong th:text="${student.studentId}"></strong><br>
                     Email: <span th:text="${student.email}"></span><br>
-                    Entry: <span th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}"></span><br>
+                    Entry: <span th:text="${student.entry}"></span><br>
 
                     <a th:href="@{'/student/edit'+'?'+'id='+${student.id}}">
                         <i class="fa fa-edit"></i>
