@@ -44,7 +44,7 @@ public class CourseController {
 
          Course cor= courseService.save(course);
         redirectAttedributes.addFlashAttribute("course", cor);
-        return "redirect:/course/course/details";
+        return "redirect:/course/details";
          }
 
 
@@ -74,7 +74,7 @@ public class CourseController {
                 e.printStackTrace();
                 redirect.addFlashAttribute("errorMessage","{course.delete.error}");
             }
-        return "redirect:/course/course/list";
+        return "redirect:/course/list";
     }
 
 }

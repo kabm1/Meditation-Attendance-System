@@ -42,7 +42,7 @@ public class LocationController {
         Location loc = locationServiceImpl.save(location);
         redirectAttedributes.addFlashAttribute("location", loc);
 
-        return "redirect:/location/location/details";
+        return "redirect:/location/details";
 
     }
 
@@ -66,7 +66,7 @@ public class LocationController {
             redirect.addFlashAttribute("errorMessage","location.delete.error");
         }
 
-        return "redirect:/location/location/details";
+        return "redirect:/location/details";
     }
 
 
