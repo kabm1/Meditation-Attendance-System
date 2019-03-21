@@ -23,9 +23,17 @@
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper">
             <!--side Menu-->
-            <div th:include="fragments/admin_sideMenu::admin_sideMenu"> </div>
-            <!--end side Menu-->
 
+            <!--end side Menu-->
+                <div th:if="${#httpSession.getAttribute('role') =='ADMIN'}" th:include="fragments/admin_sideMenu::admin_sideMenu"> </div>
+
+
+                <div th:if="${#httpSession.getAttribute('role') =='FACULTY'}" th:include="fragments/faculty_sideMenu::admin_sideMenu"> </div>
+
+
+                <div th:if="${#httpSession.getAttribute('role') =='STUDENT'}"  th:include="fragments/student_sideMenu::admin_sideMenu"> </div>
+
+         <!--   ${session.containsKey('foo')}-->
             <!--main body -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -48,6 +56,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script th:inline="javascript">
         /*<![CDATA[*/
+        $('#messageAlerts').delay(3000).fadeOut(300);
         var contextRoot= /*[[@{/}]]*/ '';
         /*]]>*/
     </script>
