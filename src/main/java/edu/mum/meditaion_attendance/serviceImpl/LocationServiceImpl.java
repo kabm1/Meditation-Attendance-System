@@ -37,8 +37,8 @@ public class LocationServiceImpl implements LocationService {
     }
 
     @Override
-    public void deleteLocation(Long locationId) {
-        locationRepository.delete(findById(locationId));
+    public void delete(Location location) {
+        locationRepository.delete(location);
     }
 
     public Location findByShortName(String shortName) {

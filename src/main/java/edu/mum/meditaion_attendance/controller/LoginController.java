@@ -6,6 +6,7 @@ import edu.mum.meditaion_attendance.domain.User;
 import edu.mum.meditaion_attendance.serviceImpl.RoleService;
 import edu.mum.meditaion_attendance.serviceImpl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,6 +22,8 @@ public class LoginController {
     UserService userService;
     @Autowired
     RoleService roleService;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @RequestMapping(value={"/login"}, method = RequestMethod.GET)
     public String login(@ModelAttribute User user){

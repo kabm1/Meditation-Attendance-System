@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      lang="en"
-      layout:decorator="layout">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
 
+        <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <form class="forms-sample" th:action="@{/login}" method="post" th:object="${user}">
@@ -25,7 +29,7 @@
                 <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
                    th:errorclass="fieldError">Invalid Password</p>
         </div>
-
+        Remeber Me: <input type="Checkbox" name="remember-me"/>
         <button type="submit" class="btn btn-success mr-2" >Login</button>
 
 </form>

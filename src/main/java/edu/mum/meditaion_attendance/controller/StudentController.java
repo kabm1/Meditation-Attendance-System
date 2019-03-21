@@ -104,6 +104,7 @@ public class StudentController {
         studentService.delete(student);
         return "redirect:/student/list";
     }
+
     @GetMapping("/details")
     public String studentDetails(@RequestParam("id") Long id,Model model){
         Student student= studentService.findById(id);
