@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head th:include="layout::headerFrag(pageTitle='course list')"></head>
+<body th:include="layout::bodyFrag(pageBody='courseList')">
+<div th:fragment="content">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <a  th:href="@{/course/add}" href="#">
+                <button type="button" class="btn btn-inverse-primary btn-rounded "> Add Course</button>
+            </a>
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-description">
+                    <code></code>
+                </p>
+
+                <div class="table-responsive">
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Course ID</th>
+                            <th>Short Name</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:if="${course.empty}">
+                            <td colspan="4">No Data</td>
+                        </tr>
+                        <tr th:each="course:${course}">
+
+                            <td th:text="${course.name}"></td>
+                            <td th:text="${course.courseId}"></td>
+                            <td th:text="${course.shortName}"></td>
+                            <td th:text="${course.description}"></td>
+
+                            <td>
+                                <a th:href="@{'/course/edit'+'?'+'id='+${course.id}}"><i class="fa fa-edit"></i>
+                                </a>
+                                <a th:href="@{'/course/delete'+'?'+'id='+${course.id}}"><i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

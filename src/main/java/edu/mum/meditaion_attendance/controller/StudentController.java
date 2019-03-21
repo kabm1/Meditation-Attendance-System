@@ -1,3 +1,4 @@
+
 package edu.mum.meditaion_attendance.controller;
 
 import edu.mum.meditaion_attendance.domain.Student;
@@ -16,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.*;
 import java.util.List;
-
 @Controller
 @RequestMapping("/student")
 public class StudentController {
