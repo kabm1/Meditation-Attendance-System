@@ -54,7 +54,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .antMatchers("/registration").permitAll()
               .antMatchers("/h2-console/**").permitAll()
               .antMatchers("/h2").permitAll()
-              .antMatchers("/attendance/**").hasAnyAuthority("FACULTY","STUDENT")
+              .antMatchers("/attendance/**").hasAnyAuthority("FACULTY","STUDENT","ADMIN")
               //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
               .anyRequest().authenticated().and().csrf().disable().formLogin()
               .loginPage("/login").failureUrl("/login?error=true")

@@ -5,8 +5,12 @@
 <head th:include="layout::headerFrag (pageTitle='index')"></head>
 <body th:include="layout::bodyFrag (pageBody='index')">
 
-    <div th:fragment="content">
-        <h3> this is index</h3>
+    <div th:fragment="content" >
+        <h3> Welcome To Maharishi University of Management</h3>
+        <div class="profile-image">
+            <img style="height: 400px;width: 500px;" th:src="@{/images/admin.jpg}" src="../../static/images/admin.jpg"
+                 alt="profile image">
+        </div>
     </div>
 </body>
 </html>

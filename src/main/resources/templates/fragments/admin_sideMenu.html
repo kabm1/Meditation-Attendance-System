@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -26,7 +26,8 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                   aria-controls="ui-basic">
                     <i class="menu-icon mdi mdi-content-copy"></i>
                     <span class="menu-title">Event</span>
                     <i class="menu-arrow"></i>
@@ -39,10 +40,6 @@
                         <li class="nav-item">
                             <a class="nav-link" th:href="@{/event/uploadFile}">Upload Attendance</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/eventType/list}">Event Type</a>
-                        </li>
-
                     </ul>
                 </div>
             </li>
@@ -57,7 +54,7 @@
                 <a class="nav-link" th:href="@{/student/list}" href="index.html">
                     <i class="menu-icon mdi mdi-television"></i>
                     <span class="menu-title">Student</span>
-                 </a>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/faculty/list}" href="index.html">

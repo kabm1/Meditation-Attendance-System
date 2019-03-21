@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@PreAuthorize("hasRole('ADMIN')")
+
 public class EventServiceImpl implements EventService {
 
     @Autowired
@@ -34,7 +34,7 @@ public class EventServiceImpl implements EventService {
     eventRepository.deleteById(id);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
     @Override
     public List<Event> findAll() {
         return (List<Event>) eventRepository.findAll();
