@@ -1,15 +1,12 @@
 
 package edu.mum.meditaion_attendance.controller;
 
-import edu.mum.meditaion_attendance.domain.Role;
-import edu.mum.meditaion_attendance.domain.User;
+
 import edu.mum.meditaion_attendance.serviceImpl.RoleService;
 import edu.mum.meditaion_attendance.serviceImpl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;

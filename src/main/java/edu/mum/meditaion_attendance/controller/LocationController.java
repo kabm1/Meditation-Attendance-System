@@ -1,8 +1,6 @@
 package edu.mum.meditaion_attendance.controller;
 
 import edu.mum.meditaion_attendance.domain.Location;
-import edu.mum.meditaion_attendance.service.LocationService;
-import edu.mum.meditaion_attendance.service.StudentService;
 import edu.mum.meditaion_attendance.serviceImpl.LocationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

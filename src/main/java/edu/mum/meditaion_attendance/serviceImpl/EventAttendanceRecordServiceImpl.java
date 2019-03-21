@@ -117,10 +117,6 @@ public class EventAttendanceRecordServiceImpl implements EventAttendanceRecordSe
 
 
             }
-            /*Arrays.stream(singleValues).forEach(string ->{
-
-            });*/
-
             records= (List<EventAttendanceRecord>)eventAttendanceRecordRepository.saveAll(records);
         }catch (Exception e){
             e.printStackTrace();

@@ -36,7 +36,6 @@
                             <td th:text="${section.course.name}">WAA</td>
                             <td th:text="${section.duration.startDate}+' to '+${section.duration.endDate}">Date
                                 Span</td>
-                            <!--<td th:text="${#dates.format(student.entry, #messages.msg('app.dateformat'))}">May 15 2015</td>-->
                             <td>
                                 <a th:href="@{'/section/listDetails'+'?'+'id='+${section.id}}">
                                     <i class="fa fa-eye"></i>

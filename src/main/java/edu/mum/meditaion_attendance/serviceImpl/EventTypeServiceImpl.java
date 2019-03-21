@@ -1,6 +1,5 @@
 package edu.mum.meditaion_attendance.serviceImpl;
 
-import edu.mum.meditaion_attendance.domain.Duration;
 import edu.mum.meditaion_attendance.domain.EventType;
 import edu.mum.meditaion_attendance.repository.EventTypeRepository;
 import edu.mum.meditaion_attendance.service.EventTypeService;

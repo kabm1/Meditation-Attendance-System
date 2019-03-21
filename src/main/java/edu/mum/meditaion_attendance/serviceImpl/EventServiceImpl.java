@@ -34,7 +34,7 @@ public class EventServiceImpl implements EventService {
     eventRepository.deleteById(id);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @Override
     public List<Event> findAll() {
         return (List<Event>) eventRepository.findAll();

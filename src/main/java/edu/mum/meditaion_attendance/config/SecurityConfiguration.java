@@ -55,7 +55,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .antMatchers("/h2-console/**").permitAll()
               .antMatchers("/h2").permitAll()
               .antMatchers("/location/**").hasAuthority("ADMIN")
-              //.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
               .anyRequest().authenticated().and().csrf().disable().formLogin()
               .loginPage("/login").failureUrl("/login?error=true")
               .defaultSuccessUrl("/home")
@@ -64,8 +63,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
               .and().logout()
               .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
               .logoutSuccessUrl("/login").deleteCookies("JSESSIONID").deleteCookies("remember-me").and().exceptionHandling()
-
-             // .accessDeniedPage("/access-denied")
               .and().rememberMe().key("uniquesAndSecret");
 
       http.headers().frameOptions().disable();
