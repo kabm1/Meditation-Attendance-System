@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+
 @Controller
-@SessionAttributes(value ={"person","userId"})
+@SessionAttributes({"person","id","role"})
 public class HomeController {
 
 
@@ -31,7 +32,10 @@ public class HomeController {
       String email = auth.getName();
       Person person =(Person)loginService.getCurrentUserID(auth);
       model.addAttribute("person", person);
-      model.addAttribute("userId", person.getId());
+      Long id=person!=null? person.getId():null;
+        System.out.println(id);
+        model.addAttribute("id", id);
+      model.addAttribute("role",loginService.getRole(auth));
 
         return "index";
     }

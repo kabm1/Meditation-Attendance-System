@@ -28,14 +28,14 @@ public class LoginController {
 
     @RequestMapping(value= {"/","/login"}, method = RequestMethod.GET)
     public ModelAndView login(SessionStatus status){
-        status.setComplete();
+        //status.setComplete();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
         return modelAndView;
     }
    @RequestMapping(value={"/logout"}, method = RequestMethod.GET)
     public String logOut(SessionStatus status){
-        status.setComplete();
+       // status.setComplete();
         return "redirect:/login";
 
    }

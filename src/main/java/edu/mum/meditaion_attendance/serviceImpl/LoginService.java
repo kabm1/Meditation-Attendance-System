@@ -31,23 +31,27 @@ public class LoginService {
         System.out.println("login"+ email);
         User user = userService.findUserByEmail(email);
         Set<Role> roles = user.getRoles();
-        List<String> rolesString = roles.stream().map((x) -> x.getRole()).collect(Collectors.toList());
-        for(String s: rolesString){
-            System.out.println(s);
-        }
+        List<String> rolesString = roles.stream().map(Role::getRole).collect(Collectors.toList());
         if (rolesString.contains(Roles.FACULTY.name())) {
             Faculty faculty = facultyService.findByEmail(email);
             if (faculty != null) {
                 return faculty;
             }
-            if (rolesString.contains(Roles.STUDENT.name())) {
-                Student student = studentService.findStudentByEmail(email);
-                if (student != null) {
-                    return student;
-                }
-            }
 
+        }if (rolesString.contains(Roles.STUDENT.name())) {
+            Student student = studentService.findStudentByEmail(email);
+            if (student != null) {
+                return student;
+            }
         }
             return null;
+    }
+
+
+    public String getRole(Authentication auth){
+        User user = userService.findUserByEmail(auth.getName());
+        Set<Role> roles = user.getRoles();
+        List<String> rolesString = roles.stream().map(Role::getRole).collect(Collectors.toList());
+        return rolesString.isEmpty()? null: rolesString.get(0);
     }
 }

@@ -39,7 +39,7 @@
                     <div class="form-group" >
                         <label
                                 for="duration"><span th:text="#{event.form.duration}">Duration</span></label>
-                        <select id="duration" name="duration" class="form-control" >
+                        <select id="duration" name="duration" class="form-control" required="required" >
                             <option value="">Select Duration</option>
                             <option th:each="dur: ${durations}"
                                     th:value="${dur.id}"

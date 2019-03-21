@@ -16,16 +16,10 @@
                                  alt="profile image">
                         </div>
                         <div class="text-wrapper">
-                            <p class="profile-name" th:text="${person!= null? person.firstName:'Faculty User'}"></p>
+                            <p class="profile-name" th:text=" ${#httpSession.getAttribute('person') != null ? #httpSession.getAttribute('person').firstName:'Faculty user'}"></p>
                         </div>
                     </div>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="menu-icon mdi mdi-television"></i>
-                    <span class="menu-title">Dashboard</span>
-                </a>
             </li>
 
             <li class="nav-item">
