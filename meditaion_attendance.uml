@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.mum.meditaion_attendance</OriginalElement>
+  <nodes>
+    <node x="810.0" y="2509.0">edu.mum.meditaion_attendance.service.CalculateExtraPointService</node>
+    <node x="2408.0" y="2396.0">edu.mum.meditaion_attendance.domain.Location</node>
+    <node x="2454.0" y="2056.0">edu.mum.meditaion_attendance.repository.StudentRepository</node>
+    <node x="2447.0" y="3061.0">edu.mum.meditaion_attendance.config.WebMvcConfig</node>
+    <node x="1270.0" y="2647.0">edu.mum.meditaion_attendance.config.SecurityConfiguration</node>
+    <node x="1767.0" y="2876.0">edu.mum.meditaion_attendance.models.BlockAttendance</node>
+    <node x="1360.0" y="1917.0">edu.mum.meditaion_attendance.service.AttendanceService</node>
+    <node x="852.0" y="3180.0">edu.mum.meditaion_attendance.repository.UserRepository</node>
+    <node x="1833.0" y="2056.0">edu.mum.meditaion_attendance.controller.StudentController</node>
+    <node x="1300.0" y="2056.0">edu.mum.meditaion_attendance.domain.Phone</node>
+    <node x="1094.0" y="3180.0">edu.mum.meditaion_attendance.repository.RoleRepository</node>
+    <node x="230.0" y="987.0">edu.mum.meditaion_attendance.domain.Role</node>
+    <node x="0.0" y="3061.0">edu.mum.meditaion_attendance.serviceImpl.RoleService</node>
+    <node x="1330.0" y="3180.0">edu.mum.meditaion_attendance.repository.EventAttendanceRecordRepository</node>
+    <node x="1325.0" y="1008.0">edu.mum.meditaion_attendance.service.DurationService</node>
+    <node x="302.0" y="3180.0">edu.mum.meditaion_attendance.repository.LocationRepository</node>
+    <node x="2079.0" y="0.0">edu.mum.meditaion_attendance.serviceImpl.EventServiceImpl</node>
+    <node x="1504.0" y="2487.0">edu.mum.meditaion_attendance.MeditaionAttendanceSytemApplication</node>
+    <node x="1582.0" y="313.0">edu.mum.meditaion_attendance.domain.Student</node>
+    <node x="481.0" y="762.0">edu.mum.meditaion_attendance.serviceImpl.FacultyServiceImpl</node>
+    <node x="2794.0" y="3061.0">edu.mum.meditaion_attendance.MeditaionAttendanceSytemApplicationTests</node>
+    <node x="0.0" y="2876.0">edu.mum.meditaion_attendance.controller.LoginController</node>
+    <node x="2788.0" y="2876.0">edu.mum.meditaion_attendance.controller.GlobalExceptionHandler</node>
+    <node x="593.0" y="2876.0">edu.mum.meditaion_attendance.serviceImpl.LoginService</node>
+    <node x="923.0" y="2876.0">edu.mum.meditaion_attendance.controller.HomeController</node>
+    <node x="272.0" y="3061.0">edu.mum.meditaion_attendance.repository.FacultyRepository</node>
+    <node x="598.0" y="3180.0">edu.mum.meditaion_attendance.models.EventAttendanceRecordModel</node>
+    <node x="1229.0" y="2876.0">edu.mum.meditaion_attendance.repository.EventRepository</node>
+    <node x="713.0" y="0.0">edu.mum.meditaion_attendance.domain.User.UserBuilder</node>
+    <node x="2606.0" y="2396.0">edu.mum.meditaion_attendance.domain.Course</node>
+    <node x="0.0" y="762.0">edu.mum.meditaion_attendance.domain.Role.RoleBuilder</node>
+    <node x="2068.0" y="3061.0">edu.mum.meditaion_attendance.repository.DurationRepo</node>
+    <node x="2654.0" y="2876.0">edu.mum.meditaion_attendance.util.Roles</node>
+    <node x="0.0" y="2647.0">edu.mum.meditaion_attendance.controller.LocationController</node>
+    <node x="1039.0" y="762.0">edu.mum.meditaion_attendance.serviceImpl.DurationServiceImpl</node>
+    <node x="529.0" y="3061.0">edu.mum.meditaion_attendance.repository.SectionRepository</node>
+    <node x="2282.0" y="2647.0">edu.mum.meditaion_attendance.domain.EventType</node>
+    <node x="1190.0" y="2396.0">edu.mum.meditaion_attendance.MeditaionAttendanceSytemApplication.MyConfig</node>
+    <node x="1645.0" y="2647.0">edu.mum.meditaion_attendance.util.MeditationExtraPoint</node>
+    <node x="2505.0" y="1463.0">edu.mum.meditaion_attendance.service.SectionService</node>
+    <node x="334.0" y="1872.0">edu.mum.meditaion_attendance.service.EventTypeService</node>
+    <node x="1924.0" y="2396.0">edu.mum.meditaion_attendance.serviceImpl.UserService</node>
+    <node x="1582.0" y="2056.0">edu.mum.meditaion_attendance.domain.Section</node>
+    <node x="1919.0" y="2647.0">edu.mum.meditaion_attendance.domain.Event</node>
+    <node x="2488.0" y="2647.0">edu.mum.meditaion_attendance.util.MeditationAttendancePercentage</node>
+    <node x="1828.0" y="313.0">edu.mum.meditaion_attendance.domain.Faculty</node>
+    <node x="2014.0" y="2876.0">edu.mum.meditaion_attendance.exception.UnableToUploadImageException</node>
+    <node x="0.0" y="2056.0">edu.mum.meditaion_attendance.controller.SectionController</node>
+    <node x="923.0" y="1552.0">edu.mum.meditaion_attendance.service.EventAttendanceRecordService</node>
+    <node x="2161.0" y="1851.0">edu.mum.meditaion_attendance.service.PhoneService</node>
+    <node x="2583.0" y="268.0">edu.mum.meditaion_attendance.service.EventService</node>
+    <node x="934.0" y="3061.0">edu.mum.meditaion_attendance.validator.StudentPhoneValidator</node>
+    <node x="0.0" y="2396.0">edu.mum.meditaion_attendance.controller.FacultyController</node>
+    <node x="1397.0" y="1261.0">edu.mum.meditaion_attendance.controller.EventController</node>
+    <node x="884.0" y="2647.0">edu.mum.meditaion_attendance.domain.EventAttendanceRecord</node>
+    <node x="0.0" y="3180.0">edu.mum.meditaion_attendance.repository.PhoneRepository</node>
+    <node x="435.0" y="2396.0">edu.mum.meditaion_attendance.serviceImpl.CalculateExtraPointServiceImpl</node>
+    <node x="1290.0" y="0.0">edu.mum.meditaion_attendance.domain.Person</node>
+    <node x="1319.0" y="3061.0">edu.mum.meditaion_attendance.repository.EventTypeRepository</node>
+    <node x="1929.0" y="986.0">edu.mum.meditaion_attendance.service.LocationService</node>
+    <node x="1882.0" y="3061.0">edu.mum.meditaion_attendance.util.ManualDataValue</node>
+    <node x="2116.0" y="1261.0">edu.mum.meditaion_attendance.serviceImpl.SectionServiceImpl</node>
+    <node x="1606.0" y="3180.0">edu.mum.meditaion_attendance.repository.CourseRepository</node>
+    <node x="779.0" y="1009.0">edu.mum.meditaion_attendance.service.FacultyService</node>
+    <node x="0.0" y="1670.0">edu.mum.meditaion_attendance.serviceImpl.EventTypeServiceImpl</node>
+    <node x="1616.0" y="762.0">edu.mum.meditaion_attendance.serviceImpl.LocationServiceImpl</node>
+    <node x="451.0" y="2647.0">edu.mum.meditaion_attendance.controller.CourseController</node>
+    <node x="1792.0" y="3180.0">edu.mum.meditaion_attendance.controller.TestController</node>
+    <node x="0.0" y="0.0">edu.mum.meditaion_attendance.serviceImpl.StudentServiceImpl</node>
+    <node x="639.0" y="1670.0">edu.mum.meditaion_attendance.serviceImpl.AttendanceServiceImpl</node>
+    <node x="375.0" y="2876.0">edu.mum.meditaion_attendance.domain.Duration</node>
+    <node x="0.0" y="1261.0">edu.mum.meditaion_attendance.serviceImpl.EventAttendanceRecordServiceImpl</node>
+    <node x="1869.0" y="1670.0">edu.mum.meditaion_attendance.serviceImpl.PhoneServiceImpl</node>
+    <node x="2449.0" y="1670.0">edu.mum.meditaion_attendance.serviceImpl.CourseServiceImpl</node>
+    <node x="1624.0" y="3061.0">edu.mum.meditaion_attendance.formatter.PhoneFormatter</node>
+    <node x="2343.0" y="2876.0">edu.mum.meditaion_attendance.validator.StudentPhone</node>
+    <node x="974.0" y="357.0">edu.mum.meditaion_attendance.domain.User</node>
+    <node x="2745.0" y="1850.0">edu.mum.meditaion_attendance.service.CourseService</node>
+    <node x="627.0" y="2056.0">edu.mum.meditaion_attendance.controller.AttendanceController</node>
+    <node x="354.0" y="401.0">edu.mum.meditaion_attendance.service.StudentService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.PhoneServiceImpl" target="edu.mum.meditaion_attendance.service.PhoneService">
+      <point x="0.0" y="0.0" />
+      <point x="2282.5" y="1740.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.EventAttendanceRecordServiceImpl" target="edu.mum.meditaion_attendance.service.EventAttendanceRecordService">
+      <point x="0.0" y="0.0" />
+      <point x="1137.5" y="1386.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.CalculateExtraPointServiceImpl" target="edu.mum.meditaion_attendance.service.CalculateExtraPointService">
+      <point x="0.0" y="0.0" />
+      <point x="977.5" y="2432.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.MeditaionAttendanceSytemApplication.MyConfig" target="edu.mum.meditaion_attendance.MeditaionAttendanceSytemApplication">
+      <point x="0.0" y="0.0" />
+      <point x="1691.5" y="2421.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.LocationServiceImpl" target="edu.mum.meditaion_attendance.service.LocationService">
+      <point x="0.0" y="0.0" />
+      <point x="2054.5" y="854.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.AttendanceServiceImpl" target="edu.mum.meditaion_attendance.service.AttendanceService">
+      <point x="0.0" y="0.0" />
+      <point x="1592.0" y="1773.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.domain.Student" target="edu.mum.meditaion_attendance.domain.Person">
+      <point x="0.0" y="0.0" />
+      <point x="1685.0" y="136.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.DurationServiceImpl" target="edu.mum.meditaion_attendance.service.DurationService">
+      <point x="0.0" y="0.0" />
+      <point x="1448.0" y="865.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.SectionServiceImpl" target="edu.mum.meditaion_attendance.service.SectionService">
+      <point x="0.0" y="0.0" />
+      <point x="2679.5" y="1342.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.FacultyServiceImpl" target="edu.mum.meditaion_attendance.service.FacultyService">
+      <point x="0.0" y="0.0" />
+      <point x="886.5" y="865.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.CourseServiceImpl" target="edu.mum.meditaion_attendance.service.CourseService">
+      <point x="0.0" y="0.0" />
+      <point x="2839.0" y="1740.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.StudentServiceImpl" target="edu.mum.meditaion_attendance.service.StudentService">
+      <point x="0.0" y="0.0" />
+      <point x="511.0" y="180.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.domain.Role.RoleBuilder" target="edu.mum.meditaion_attendance.domain.Role">
+      <point x="0.0" y="0.0" />
+      <point x="333.0" y="854.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.domain.User.UserBuilder" target="edu.mum.meditaion_attendance.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="1109.5" y="158.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.EventTypeServiceImpl" target="edu.mum.meditaion_attendance.service.EventTypeService">
+      <point x="0.0" y="0.0" />
+      <point x="464.0" y="1751.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.serviceImpl.EventServiceImpl" target="edu.mum.meditaion_attendance.service.EventService">
+      <point x="0.0" y="0.0" />
+      <point x="2815.0" y="114.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.mum.meditaion_attendance.domain.Faculty" target="edu.mum.meditaion_attendance.domain.Person">
+      <point x="0.0" y="0.0" />
+      <point x="1931.0" y="136.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="474.5" y="2745.5" />
+  <SelectedNodes>
+    <node>edu.mum.meditaion_attendance.controller.LocationController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
