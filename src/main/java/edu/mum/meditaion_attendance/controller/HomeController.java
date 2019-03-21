@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@SessionAttributes("person")
+@SessionAttributes(value ={"person","userId"})
 public class HomeController {
 
 
@@ -29,9 +29,9 @@ public class HomeController {
     @GetMapping(value={"/home"})
     public String home(Model model, Authentication auth){
       String email = auth.getName();
-      Object person =(Person)loginService.getCurrentUserID(auth);
+      Person person =(Person)loginService.getCurrentUserID(auth);
       model.addAttribute("person", person);
-
+      model.addAttribute("userId", person.getId());
 
         return "index";
     }
