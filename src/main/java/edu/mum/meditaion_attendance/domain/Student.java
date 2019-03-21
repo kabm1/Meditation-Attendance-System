@@ -17,9 +17,9 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class Student extends Person {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id;*/
 
     @NotBlank
     @Size(min = 9,max = 12)
@@ -37,13 +37,13 @@ public class Student extends Person {
     private Phone phone;
 
 
-    public Long getId() {
+   /* public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
+    }*/
 
     public String getStudentId() {
         return studentId;
